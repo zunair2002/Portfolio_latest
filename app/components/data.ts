@@ -84,20 +84,6 @@ export const experienceData = [
     ],
     tags: ["React", "Tailwind CSS", "Figma"],
   },
-  {
-    role: "Frontend Developer",
-    company: "Ipsum Solutions (Freelance)",
-    period: "Jun'24 - Dec'24",
-    points: [
-      "Designed and developed responsive web applications for 5+ clients using React and Tailwind CSS, improving average page load speed by 40%.",
-      "Turned vague design briefs into pixel-perfect interfaces because 'make it pop' is not a real instruction but I delivered anyway.",
-      "Blended creativity with speed using modern tooling and attention to detail to bring aesthetic harmony across projects.",
-      "Blended creativity with speed using modern tooling and attention to detail to bring aesthetic harmony across projects.",
-      "Blended creativity with speed using modern tooling and attention to detail to bring aesthetic harmony across projects.",
-      "Blended creativity with speed using modern tooling and attention to detail to bring aesthetic harmony across projects.",
-    ],
-    tags: ["React", "Tailwind CSS", "Figma"],
-  },
 ];
 
 export const projectsData = [

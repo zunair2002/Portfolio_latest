@@ -6,33 +6,34 @@ export default function Hero() {
   return (
    <section className="min-h-[80vh] w-full flex flex-col items-center justify-center text-center py-16" style={{marginTop: "20px"}}>
 
-<motion.div
-  initial={{ opacity: 0, x: -120 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1 }}
-  viewport={{ once: false, amount: 0.2 }}
->
-  <motion.h1
-    initial={{ width: 0, rotate: -6, opacity: 0 }}
-    whileInView={{ width: "100%", rotate: -4, opacity: 1 }}
-    transition={{ duration: 3.2, ease: "easeInOut" }}
+  <motion.div
+    initial={{ opacity: 0, x: -120 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1 }}
     viewport={{ once: false, amount: 0.2 }}
-    className="overflow-hidden whitespace-nowrap leading-[1.1] mb-4"
-    style={{
-      fontFamily: "'Segoe Script', cursive",
-      fontSize: "clamp(3.5rem, 9vw, 8rem)",
-      fontWeight: 800,
-      background: "linear-gradient(to right, #ffffff, #a855f7)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent",
-      width: "fit-content",
-      textShadow: "0 0 18px rgba(255,255,255,0.15)",
-      transformOrigin: "left center",
-    }}
+    className="w-full flex justify-center px-2"
+    style={{paddingBottom: '70px'}}
   >
-    {heroData.name}
-  </motion.h1>
-</motion.div>
+    <motion.h1
+      initial={{ opacity: 0, y: -20, rotate: -6 }}
+      whileInView={{ opacity: 1, y: 0, rotate: -4 }}
+      transition={{ duration: 2, ease: "easeInOut" }}
+      viewport={{ once: false, amount: 0.2 }}
+      className="mb-4 leading-[1.1] text-center"
+      style={{
+        fontFamily: "'Segoe Script', cursive",
+        fontSize: "clamp(2.2rem, 8vw, 7.5rem)",
+        fontWeight: 800,
+        background: "linear-gradient(to right, #ffffff, #a855f7)",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        textShadow: "0 0 18px rgba(255,255,255,0.15)",
+        width: "100%",
+      }}
+    >
+      {heroData.name}
+    </motion.h1>
+  </motion.div>
 
   <motion.p
     initial={{ opacity: 0 }}
@@ -52,20 +53,20 @@ export default function Hero() {
     {heroData.description}
   </motion.p>
 
-<motion.a
-  href={heroData.resumeUrl}
-  download="Zunair-Shahid-Resume.pdf"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.9 }}
-  whileHover={{ scale: 1.06 }}
-  whileTap={{ scale: 0.97 }}
-  className="group relative inline-flex w-fit items-center justify-center overflow-hidden veiw_btn mt-5 rounded-xl bg-white text-black text-base font-bold shadow-2xl transition-all hover:bg-[#e2d9f3]"
->
-  <span className="relative z-10">Download Resume</span>
+  <motion.a
+    href={heroData.resumeUrl}
+    download="Zunair-Shahid-Resume.pdf"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.9 }}
+    whileHover={{ scale: 1.06 }}
+    whileTap={{ scale: 0.97 }}
+    className="group relative inline-flex w-fit items-center justify-center overflow-hidden btnn rounded-xl bg-white text-black text-base font-bold shadow-2xl transition-all hover:bg-[#e2d9f3]" style={{marginTop:'45px'}}
+  >
+    <span className="relative z-10">Download Resume</span>
+    <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
+  </motion.a>
 
-  <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
-</motion.a>
 </section>
   );
 }

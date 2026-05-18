@@ -9,84 +9,81 @@ function Footer() {
   };
 
   return (
-    // pb-12 se bottom par ek professional gap aa jayega
-    <footer className="w-full pt-12 pb-10 font-sans border-t border-white/10" style={{marginBottom: "60px"}}>
-      <div className="w-full flex flex-col gap-10">
+  <footer className="w-full py-5 font-sans border-t border-white/10">
+  <div className="w-full flex flex-col gap-5" style={{marginTop: '15px'}}>
 
-        {/* BACK TO TOP */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: false, amount: 0.2 }}
-          className="flex justify-end"
+    <div className="flex flex-row items-center justify-between w-full">
+      
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex items-center gap-2"
+      >
+        <span
+          className="text-white/80 text-xs font-semibold uppercase"
+          style={{ fontFamily: "'Segoe Script', cursive", paddingLeft:'3px'}}
         >
-          
-        </motion.div>
+          Zunair Shahid
+        </span>
+      </motion.div>
 
-        {/* LET'S CONNECT */}
-        <motion.div
-          initial={{ opacity: 0, x: -120 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
-          className="flex justify-start"
-        >
-          <motion.h1
-            initial={{ width: 0, rotate: -6, opacity: 0 }}
-            whileInView={{ width: "100%", rotate: -4, opacity: 1 }}
-            transition={{ duration: 3.2, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 0.2 }}
-            className="overflow-hidden whitespace-nowrap leading-none"
-            style={{
-              fontFamily: "'Segoe Script', cursive",
-              fontSize: "clamp(3rem, 9vw, 7rem)",
-              fontWeight: 700,
-              color: "#ffffff",
-              width: "fit-content",
-              textShadow: "0 0 18px rgba(255,255,255,0.15)",
-              transformOrigin: "left center",
-              marginTop: "20px",
-            }}
-          >
-            Let&apos;s Connect
-          </motion.h1>
-        </motion.div>
+   <motion.div
+  initial={{ opacity: 0, x: 20 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="flex items-center gap-2"
+>
+  {[
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      href: "#",
+    },
+    {
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
+      href: "#",
+    },
+    {
+      icon: "https://cdn.simpleicons.org/x",
+      href: "#",
+    },
+    {
+      icon: "https://cdn.simpleicons.org/gmail",
+      href: "#",
+    },
+  ].map((item, index) => (
+    <motion.a
+      key={index}
+      href={item.href}
+      whileHover={{ y: -2, scale: 1.1 }}
+      className="w-7 h-7 rounded-full flex items-center justify-center border border-white/20 bg-white/5 backdrop-blur-md hover:bg-white/20 transition-all duration-300"
+    >
+      <img src={item.icon} alt="" className="w-3.5 h-3.5" />
+    </motion.a>
+  ))}
+</motion.div>
+    </div>
 
-        {/* SOCIAL + CREDITS */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.2 }}
-          className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16 mt-6"
-        >
-          <div className="flex flex-wrap gap-4">
-            {["Github", "Linkedin", "Twitter"].map((link, index) => (
-              <motion.a
-                key={link}
-                href="#"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                viewport={{ once: false, amount: 0.2 }}
-                whileHover={{ y: -4, scale: 1.05 }}
-                className="px-8 py-3 rounded-full text-[10px] btnn font-semibold uppercase tracking-[0.25em] border border-white/20 bg-white/5 text-white backdrop-blur-md hover:bg-white hover:text-black transition-all duration-300"
-              >
-                {link}
-              </motion.a>
-            ))}
-          </div>
-          <div className="text-[10px] leading-relaxed uppercase tracking-[0.2em] font-bold text-white/40 text-left md:text-right">
-            <p className="mt-1">
-              Development by{" "}
-              <span className="text-white underline-offset-4">Zunair Shahid</span>
-            </p>
-          </div>
-        </motion.div>
+   <motion.div
+  initial={{ opacity: 0, y: 10 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.2 }}
+  viewport={{ once: false, amount: 0.2 }}
+  className="w-full text-left text-[10px] md:text-[11px] uppercase font-semibold text-white/40"
+  style={{ fontFamily: "'Segoe Script', cursive" }}
+>
+  <p className="flex flex-wrap items-center gap-2">
+    <span>Made with</span>
+    <span className="text-purple-400 animate-pulse">♥</span>
+    <span>by</span>
+    <span className="text-white/70 font-medium">Zunair Shahid</span>
+  </p>
+</motion.div>
 
-      </div>
-    </footer>
+  </div>
+</footer>
   );
 }
 
