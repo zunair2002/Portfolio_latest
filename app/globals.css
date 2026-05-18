@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  
+  background: linear-gradient(
+    135deg,
+    #1a0533 0%,
+    #2d1065 25%,
+    #4a1585 50%,
+    #2d1065 75%,
+    #1a0533 100%
+  );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+.navv{
+  padding: 20px 15px;
+  background: rgba(168,85,247,0.3);
+  margin-top: 1rem;
+}
+.btnn{
+  padding: 6px 14px;
+}
+.veiw_btn{
+  padding: 12px 24px;
+  margin-top: 60px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1a0533;
+}
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 3px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 80s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.marquee-track-reverse {
+  animation: marquee 80s linear infinite reverse;
+  display: flex;
+  width: max-content;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #a855f7; }
 }
