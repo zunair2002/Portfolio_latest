@@ -46,7 +46,7 @@ export default function Skills() {
         style={{
           textAlign: "center",
           marginBottom: 48,
-          fontFamily: "'Segoe Script', cursive", 
+          fontFamily: "var(--font-michroma)", 
           fontSize: "clamp(2.5rem, 5vw, 4rem)",
           fontWeight: 800,
           background: "linear-gradient(to right, #ffffff, #a855f7)",

@@ -10,11 +10,11 @@ export default function Navbar() {
   initial={{ y: -60, opacity: 0 }}
   animate={{ y: 0, opacity: 1 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
-className="sticky top-3 z-50 navv flex items-center justify-between rounded-xl border border-white/10 backdrop-blur-md shadow-2xl shadow-black/50 px-4 py-1"
+className="sticky top-3 z-50 navv flex items-center justify-between border-0 border-b border-white/40"
 >
   <div className="flex items-center gap-3 md:gap-4">
     <span
-      className="text-lg md:text-xl text-white/90"
+      className="text-lg md:text-xl text-white"
       style={{ fontFamily: "'Segoe Script', cursive" }}
     >
       My logo

@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Windsong:wght@400&display=swap");
 @import "tailwindcss";
+
+:root {
+  --font-windsong: "Windsong", cursive;
+}
 
 * {
   margin: 0;
@@ -10,12 +15,12 @@ html, body {
   width: 100%;
     background: linear-gradient(
     135deg,
-    #1a0533 0%,
-    #2d1065 25%,
-    #4a1585 50%,
-    #2d1065 75%,
-    #1a0533 100%
-  );
+    #240051 0%,
+    #290046b3 25%,
+    #220443 50%,
+    #1c0648 75%,
+    #300031a2 100% 
+   );
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -23,7 +28,6 @@ html, body {
 
 .navv{
   padding: 20px 10px;
-  background: rgba(168,85,247,0.3);
   margin-top: 1rem;
 }
 .btnn{

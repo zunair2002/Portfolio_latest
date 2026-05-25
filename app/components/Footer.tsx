@@ -22,8 +22,8 @@ function Footer() {
         className="flex items-center gap-2"
       >
         <span
-          className="text-white/80 text-xs font-semibold uppercase"
-          style={{ fontFamily: "'Segoe Script', cursive", paddingLeft:'3px'}}
+          className="text-white/80 text-lg font-semibold"
+          style={{ fontFamily: "var(--font-windsong)",paddingLeft:'3px'}}
         >
           Zunair Shahid
         </span>
@@ -71,8 +71,8 @@ function Footer() {
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, delay: 0.2 }}
   viewport={{ once: false, amount: 0.2 }}
-  className="w-full text-left text-[10px] md:text-[11px] uppercase font-semibold text-white/40"
-  style={{ fontFamily: "'Segoe Script', cursive" }}
+  className="w-full text-left text-[10px] md:text-[11px] font-semibold text-white/40"
+  style={{ fontFamily: "var(--font-iner)" }}
 >
   <p className="flex flex-wrap items-center gap-2">
     <span>Made with</span>

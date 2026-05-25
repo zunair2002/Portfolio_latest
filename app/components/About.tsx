@@ -16,8 +16,6 @@ export default function About() {
   className="w-full py-12 md:py-20 px-4"
 >
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-
-    {/* IMAGE */}
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
@@ -25,11 +23,7 @@ export default function About() {
       className="flex justify-center"
     >
       <div className="relative group w-full max-w-[320px] md:max-w-[420px] aspect-[4/5]">
-
-        {/* BORDER EFFECT */}
         <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
-
-        {/* IMAGE BOX */}
         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
 
           {aboutData.photoUrl ? (
@@ -47,8 +41,6 @@ export default function About() {
         </div>
       </div>
     </motion.div>
-
-    {/* TEXT */}
     <motion.div
       initial={{ opacity: 0, x: 30 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -58,7 +50,7 @@ export default function About() {
       <h2
         className="text-3xl md:text-5xl font-bold"
         style={{
-          fontFamily: "'Segoe Script', cursive",
+          fontFamily: "var(--font-michroma)",
           background: "linear-gradient(to right, #fff, #a855f7)",
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -67,13 +59,13 @@ export default function About() {
         About Me
       </h2>
 
-      <div className="space-y-4 text-white/70 text-sm md:text-base leading-relaxed">
+      <div className="space-y-4 text-red-900 text-white/80 text-sm md:text-base text-[16px] leading-relaxed whitespace-pre-line" style={{fontFamily: "var(--font-inter)"}}>
         {aboutData.paragraphs.map((p, i) => (
           <p key={i}>{p}</p>
         ))}
       </div>
 <div className="flex justify-center md:justify-start">
-  <div className="inline-flex items-center gap-2 border btnn border-white/20 text-white/80 px-3 py-1.5 rounded-full w-fit">
+  <div className="inline-flex items-center gap-2 border btnn border-white/20 text-white/80 px-3 py-1.5 rounded-full w-fit"  style={{fontFamily:"'Courier New', monospace"}}>
     <MapPin size={18} />
     <span className="text-sm">{aboutData.location}</span>
   </div>
