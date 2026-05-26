@@ -43,7 +43,7 @@ export default function Hero() {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.6, delay: 0.5 }}
-    className="text-[22px] tracking-[0.3em] text-white mb-6 uppercase font-bold" style={{marginBottom:'12px', fontFamily:"var(--font-inter)"}}
+    className="text-[22px] tracking-[0.3em] text-white mb-6 uppercase font-bold" style={{marginBottom:'12px', fontFamily:"var(--font-inter)",color: '#b18cf5',}}
   >
     {heroData.title}
   </motion.p>
@@ -58,12 +58,28 @@ style={{fontFamily: "var(--font-inter)"}}>
   </motion.p>
 
   <motion.a
-    href={heroData.resumeUrl}
+  href={heroData.resumeUrl}
     download="Zunair-Shahid-Resume.pdf"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="group relative inline-flex w-fit items-center justify-center overflow-hidden btnn rounded-xl bg-white text-black font-bold shadow-2xl transition-all hover:bg-[#e2d9f3]" style={{marginTop:'45px'}}
-  >
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="relative flex items-center justify-center overflow-hidden rounded-xl bg-white text-black px-5 md:px-8 py-2 md:py-2.5 text-xs md:text-sm font-bold shadow-lg transition-all duration-300 border border-white/20 cursor-pointer hover:bg-white hover:text-black" 
+        style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px 8px",
+                    background: "#ffffff",
+                    border: "1px solid rgba(0,0,0,0.08)",
+                    borderRadius: 8,
+                    color: "#000000",
+                    fontSize: 13,
+                    textDecoration: "none",
+                    fontWeight: 500,
+                    transition: "opacity 0.2s ease",
+                    marginTop:'45px',
+                  }}
+      >
+   
     <span className="relative z-10">Download Resume</span>
     <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-500 group-hover:translate-x-0" />
   </motion.a>

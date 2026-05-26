@@ -39,19 +39,19 @@ function Footer() {
   {[
     {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-      href: "#",
+      href: "https://github.com/zunair2002",
     },
     {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-      href: "#",
+      href: "https://www.linkedin.com/in/zunair-shahid-1ab94327a/",
     },
     {
-      icon: "https://cdn.simpleicons.org/x",
-      href: "#",
+        icon: "https://cdn.simpleicons.org/instagram",
+        href: "https://www.instagram.com/zunair2003/",    
     },
     {
       icon: "https://cdn.simpleicons.org/gmail",
-      href: "#",
+      href: "mailto:zunairshahid02@gmail.com",
     },
   ].map((item, index) => (
     <motion.a

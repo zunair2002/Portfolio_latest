@@ -17,13 +17,10 @@ export default function Experience() {
         style={{ textAlign: "center", marginBottom: "clamp(20px, 4vw, 50px)" }}
       >
         <h2
+          className="text-4xl md:text-6xl font-black"
           style={{
-            fontFamily: "var(--font-michroma)",
-            fontSize: "clamp(2rem, 5vw, 4rem)",
-            fontWeight: 800,
-            background: "linear-gradient(to right, #ffffff, #a855f7)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            fontFamily: "var(--font-michroma)", 
+            color: '#b18cf5',
           }}
         >
           Experience
@@ -32,7 +29,7 @@ export default function Experience() {
           style={{
             fontFamily: "var(--font-inter)",
             color: "white",
-            marginTop: "15px",
+            marginTop: "30px",
           }}
         >
           My professional journey and key experiences
@@ -205,14 +202,14 @@ export default function Experience() {
                   <span
                     key={j}
                     style={{
-                      padding: "3px 9px",
-                      background: "rgba(255, 255, 255, 0.05)",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
-                      borderRadius: "10px",
-                      fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
-                      fontFamily: "var(--font-inter)",
-                      color: "rgba(255, 255, 255, 0.9)",
-                    }}
+                    padding: "4px 12px",
+                    border: "1px solid rgba(168,85,247,0.4)",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    borderRadius: 4,
+                    fontSize: 12,
+                    fontFamily: "var(--font-inter)",
+                    color: "rgb(255, 255, 255)",
+                  }}
                   >
                     {tag}
                   </span>

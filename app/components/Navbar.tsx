@@ -17,7 +17,7 @@ className="sticky top-3 z-50 navv flex items-center justify-between border-0 bor
       className="text-lg md:text-xl text-white"
       style={{ fontFamily: "'Segoe Script', cursive" }}
     >
-      My logo
+      Z.Shahid
     </span>
   </div>
 
@@ -25,7 +25,23 @@ className="sticky top-3 z-50 navv flex items-center justify-between border-0 bor
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="relative flex items-center btnn justify-center overflow-hidden rounded-xl bg-white text-black px-5 md:px-8 py-2 md:py-2.5 text-xs md:text-sm font-bold shadow-lg transition-all duration-300 border border-white/20 cursor-pointer hover:bg-white hover:text-black"
+      className="relative flex items-center justify-center overflow-hidden rounded-xl bg-white text-black px-5 md:px-8 py-2 md:py-2.5 text-xs md:text-sm font-bold shadow-lg transition-all duration-300 border border-white/20 cursor-pointer hover:bg-white hover:text-black" 
+      style={{
+                  flex: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 7,
+                  padding: "10px 8px",
+                  background: "#ffffff",
+                  border: "1px solid rgba(0,0,0,0.08)",
+                  borderRadius: 8,
+                  color: "#000000",
+                  fontSize: 13,
+                  textDecoration: "none",
+                  fontWeight: 500,
+                  transition: "opacity 0.2s ease",
+                }}
     >
       <span className="relative z-10">
         Certification

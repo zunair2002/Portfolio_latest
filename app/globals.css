@@ -13,21 +13,30 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
-    background: linear-gradient(
+  /* background: linear-gradient(
+  135deg,
+  #050b2e 0%,
+  #0a1a4d 25%,
+  #0b2f5c 50%,
+  #083a4d 75%,
+  #021b2a 100%
+); */
+  
+    /* background: linear-gradient(
     135deg,
     #240051 0%,
     #290046b3 25%,
     #220443 50%,
     #1c0648 75%,
     #300031a2 100% 
-   );
+   ); */
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .navv{
-  padding: 20px 10px;
+  padding: 15px 10px;
   margin-top: 1rem;
 }
 .btnn{

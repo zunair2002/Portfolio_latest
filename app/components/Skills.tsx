@@ -40,22 +40,18 @@ export default function Skills() {
   return (
     <section id="skills" ref={ref} className="w-full py-12 md:py-16 overflow-hidden">
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        style={{
-          textAlign: "center",
-          marginBottom: 48,
-          fontFamily: "var(--font-michroma)", 
-          fontSize: "clamp(2.5rem, 5vw, 4rem)",
-          fontWeight: 800,
-          background: "linear-gradient(to right, #ffffff, #a855f7)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        My Skills 
-      </motion.h2>
+  initial={{ opacity: 0, y: 20 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.6 }}
+  className="text-4xl md:text-6xl font-black text-center"
+  style={{
+    fontFamily: "var(--font-michroma)",
+    color: '#b18cf5',
+    marginBottom: '52px',
+  }}
+>
+  My Skills
+</motion.h2>
 
       <div className="flex justify-center items-center w-full">
         <motion.div

@@ -22,7 +22,7 @@ export default function About() {
       transition={{ duration: 0.7 }}
       className="flex justify-center"
     >
-      <div className="relative group w-full max-w-[320px] md:max-w-[420px] aspect-[4/5]">
+      <div className="relative group w-full max-w-[320px] md:max-w-[420px] aspect-[4/5]" style={{marginBottom:'50px'}}>
         <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
 
@@ -48,16 +48,14 @@ export default function About() {
       className="flex flex-col gap-5 text-center md:text-left"
     >
       <h2
-        className="text-3xl md:text-5xl font-bold"
-        style={{
-          fontFamily: "var(--font-michroma)",
-          background: "linear-gradient(to right, #fff, #a855f7)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
-      >
-        About Me
-      </h2>
+  className="text-4xl md:text-6xl font-black tracking-wide"
+  style={{
+    fontFamily: "var(--font-michroma)",
+    color: '#b18cf5',
+  }}
+>
+  About Me
+</h2>
 
       <div className="space-y-4 text-red-900 text-white/80 text-sm md:text-base text-[16px] leading-relaxed whitespace-pre-line" style={{fontFamily: "var(--font-inter)"}}>
         {aboutData.paragraphs.map((p, i) => (
@@ -65,7 +63,7 @@ export default function About() {
         ))}
       </div>
 <div className="flex justify-center md:justify-start">
-  <div className="inline-flex items-center gap-2 border btnn border-white/20 text-white/80 px-3 py-1.5 rounded-full w-fit"  style={{fontFamily:"'Courier New', monospace"}}>
+  <div className="inline-flex items-center gap-2 border btnn border-white/20 text-white/80 px-3 py-1.5 rounded-full w-fit"  style={{fontFamily:"var(--font-inter)"}}>
     <MapPin size={18} />
     <span className="text-sm">{aboutData.location}</span>
   </div>

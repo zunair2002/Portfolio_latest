@@ -12,6 +12,8 @@ const demoprojects = [
     description:
       "SabziMart is a grocery delivery platform built for customers riders and admins on a secure and unified system. It provides a reliable end to end workflow from order to delivery. The platform is designed for scalability performance and a smooth user experience.",
     tags: ["React", "Node.js", "MongoDB", "Express", "JWT"],
+    githubUrl: "https://github.com/zunair2002/SabziMart",
+    demoUrl: "/demoprojects/1",
   },
   {
     id: 2,
@@ -19,6 +21,8 @@ const demoprojects = [
     description:
       "A real-time chat application with Socket.io messaging and secure authentication, featuring a responsive interface and a scalable backend for smooth, reliable communication.",
     tags: ["React", "Socket.io", "Express", "JWT", "MongoDB"],
+    githubUrl: "https://github.com/zunair2002/ChatGO",
+    demoUrl: "/demoprojects/2",
   },
   {
     id: 3,
@@ -26,6 +30,8 @@ const demoprojects = [
     description:
       "A modern crypto-wallet interface that shows live cryptocurrency data and key info for popular coins. It also features an interactive Bitcoin chart to track market trends in real time.",
     tags: ["React", "CoinGecko API", "Chart.js", "Tailwind"],
+    githubUrl: "https://github.com/zunair2002/WalletWave",
+    demoUrl: "/demoprojects/3",
   },
   {
     id: 4,
@@ -33,6 +39,27 @@ const demoprojects = [
     description:
       "An expense tracker logs all your income and spending using simple charts to show exactly where your money goes. This helps you easily understand your financial habits and make smarter plans for your budget.",
     tags: ["React", "LocalStorage", "Recharts", "Tailwind"],
+    githubUrl: "https://github.com/zunair2002/ExpenseApp-MERN",
+    demoUrl: "/demoprojects/4",
+  },
+  // https://github.com/zunair2002/phishing-ML
+  {
+    id: 5,
+    title: "Email Checker",
+    description:
+      "AI SQL Agent Built an AI SQL Agent that converts natural language into SQL queries and executes database operations. Integrated AI SDK with xAI Grok API to enable seamless and intelligent database interactions.",
+    tags: ["React", "LocalStorage", "Recharts", "Tailwind"],
+    githubUrl: "https://github.com/zunair2002/phishing-ML",
+    demoUrl: "/demoprojects/5",
+  },
+  {
+    id: 6,
+    title: "RAG System",
+    description:
+      "AI Chatbot (RAG-Based) Developed an AI chatbot using Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. Used LangChain, LangGraph, and a vector database to improve information retrieval and enhance the overall user experience.",
+    tags: ["React", "LocalStorage", "Recharts", "Tailwind"],
+    githubUrl: "https://github.com/zunair2002/RAG-application",
+    demoUrl: "/demoprojects/6",
   },
 ];
 
@@ -49,13 +76,10 @@ export default function Projects() {
         style={{ textAlign: "center", marginBottom: 60 }}
       >
         <h2
+        className="text-4xl md:text-6xl font-black"
           style={{
             fontFamily: "var(--font-michroma)", 
-            fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            fontWeight: 800,
-            background: "linear-gradient(to right, #ffffff, #a855f7)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
+            color: '#b18cf5',
           }}
         >
           My Projects
@@ -78,6 +102,8 @@ export default function Projects() {
               flexDirection: "column",
               gap: 16,
               cursor: "default",
+               background: "rgba(255, 255, 255, 0.03)",
+                backdropFilter: "blur(10px)",
             }}
           >
             <div>
@@ -112,7 +138,7 @@ export default function Projects() {
                   key={j}
                   style={{
                     padding: "4px 12px",
-                    border: "1px solid rgba(168,85,247,0.4)",
+                    border: "1px solid #48474a",
                     background: "rgba(255, 255, 255, 0.05)",
                     borderRadius: 4,
                     fontSize: 12,
@@ -126,29 +152,35 @@ export default function Projects() {
             </div>
 
             <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
-              <Link
-                href={`/codeprojects/${project.id}`}
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 7,
-                  padding: "10px 0",
-                  background: "rgba(255, 255, 255, 0.12)",
-                  borderRadius: 8,
-                  color: "#ffffff",
-                  fontSize: 13,
-                  textDecoration: "none",
-                  fontWeight: 500,
-                  backdropFilter: "blur(10px)",
-                  WebkitBackdropFilter: "blur(10px)",
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(255, 255, 255, 0.18)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)"; }}
-              >
-                <Box size={15} /> Code
-              </Link>
+             <a
+  href={project.githubUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{
+    flex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 7,
+    padding: "10px 0",
+    background: "rgba(255, 255, 255, 0.12)",
+    borderRadius: 8,
+    color: "#ffffff",
+    fontSize: 13,
+    textDecoration: "none",
+    fontWeight: 500,
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.background = "rgba(255, 255, 255, 0.18)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+  }}
+>
+  <Box size={15} /> Code
+</a>
               <Link
                 href={`/demoprojects/${project.id}`}
                 style={{

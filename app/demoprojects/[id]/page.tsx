@@ -1,13 +1,14 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Clock, CheckCircle } from "lucide-react";
+import ReflectBackground from "../wave";
 
 const demoprojects = [
   {
     id: 1,
     title: "SabziMart",
-    status: "Completed",
-    duration: "3 months",
+    status: "Working",
+    duration: "2 months",
     overview:
       "SabziMart is a full-stack grocery delivery platform that connects customers, delivery riders, and admins through a single unified system. Built with scalability in mind, it handles real-time order tracking, role-based access, and a smooth end-to-end delivery workflow.",
     features: [
@@ -27,17 +28,20 @@ const demoprojects = [
       { name: "Socket.io", purpose: "Real-time updates" },
     ],
     screenshots: [
-      "/images/sabzimart-1.png",
-      "/images/sabzimart-2.png",
-      "/images/sabzimart-1.png",
-      "/images/sabzimart-2.png"
+      "/sabzimart/Screenshot 2026-04-23 102633.png",
+      "/sabzimart/Screenshot 2026-04-23 102714.png",
+      "/sabzimart/Screenshot 2026-04-23 103001.png",
+      "/sabzimart/Screenshot 2026-04-23 102748.png",
+      "/sabzimart/Screenshot 2026-04-23 102841.png",
+      "/sabzimart/Screenshot 2026-04-23 103038.png"
+      
     ],
   },
   {
     id: 2,
     title: "ChatGO",
     status: "Completed",
-    duration: "6 weeks",
+    duration: "2 weeks",
     overview:
       "ChatGO is a real-time messaging platform that allows users to communicate instantly through private and group chats. Built on Socket.io, it delivers messages with zero delay and ensures secure sessions via JWT authentication.",
     features: [
@@ -56,17 +60,17 @@ const demoprojects = [
       { name: "JWT", purpose: "Secure authentication" },
     ],
     screenshots: [
-      "/images/chatgo-1.png",
-      "/images/chatgo-2.png",
-      "/images/chatgo-2.png",
-      "/images/chatgo-2.png"
+      "/chatgo/chat2.png",
+      "/chatgo/ch3.png",
+      "/chatgo/chat1.png",
+      "/chatgo/ch1.png"
     ],
   },
   {
     id: 3,
     title: "WalletWave",
     status: "Completed",
-    duration: "4 weeks",
+    duration: "1 weeks",
     overview:
       "WalletWave is a sleek crypto dashboard that aggregates live market data for top cryptocurrencies. Users can monitor prices, market caps, and volume changes at a glance, with an interactive Bitcoin price chart powered by Chart.js.",
     features: [
@@ -85,17 +89,17 @@ const demoprojects = [
       { name: "Axios", purpose: "API requests" },
     ],
     screenshots: [
-      "/images/walletwave-1.png",
-      "/images/walletwave-2.png",
-      "/images/walletwave-2.png",
-      "/images/walletwave-2.png"
+      "/walletwave/a1.png",
+      "/walletwave/a2.png",
+      "/walletwave/a3.png",
+      "/walletwave/a4.png"
     ],
   },
   {
     id: 4,
     title: "Expense Tracker",
     status: "Completed",
-    duration: "2 weeks",
+    duration: "1 weeks",
     overview:
       "Expense Tracker is a personal finance tool that helps users log income and expenses, categorize transactions, and visualize spending patterns through clean charts. All data is persisted locally so nothing is lost on refresh.",
     features: [
@@ -113,10 +117,64 @@ const demoprojects = [
       { name: "Tailwind CSS", purpose: "Styling" },
     ],
     screenshots: [
-      "/images/expense-1.png",
-      "/images/expense-2.png",
-      "/images/expense-2.png",
-      "/images/expense-2.png"
+      "/expensetracker/e1.png",
+      "/expensetracker/e2.png",
+      "/expensetracker/e3.png",
+      "/expensetracker/e4.png"
+    ],
+  },
+  {
+    id: 5,
+    title: "Email Checker",
+    status: "Completed",
+    duration: "1 weeks",
+    overview:
+      "Expense Tracker is a personal finance tool that helps users log income and expenses, categorize transactions, and visualize spending patterns through clean charts. All data is persisted locally so nothing is lost on refresh.",
+    features: [
+      "Add, edit, and delete income and expense transactions",
+      "Category-wise breakdown with pie and bar charts via Recharts",
+      "Monthly summary with total income, expenses, and net balance",
+      "Filter transactions by date range or category",
+      "LocalStorage persistence — no backend needed",
+      "Export transactions as CSV for external use",
+    ],
+    techStack: [
+      { name: "React", purpose: "Frontend UI" },
+      { name: "Recharts", purpose: "Data visualization" },
+      { name: "LocalStorage", purpose: "Client-side persistence" },
+      { name: "Tailwind CSS", purpose: "Styling" },
+    ],
+    screenshots: [
+      "/expensetracker/e1.png",
+      "/expensetracker/e2.png",
+      "/expensetracker/e3.png",
+      "/expensetracker/e4.png"
+    ],
+  },
+  {
+    id: 6,
+    title: "RAG Chatbot",
+    status: "Completed",
+    duration: "1 weeks",
+    overview:
+      "Expense Tracker is a personal finance tool that helps users log income and expenses, categorize transactions, and visualize spending patterns through clean charts. All data is persisted locally so nothing is lost on refresh.",
+    features: [
+      "Add, edit, and delete income and expense transactions",
+      "Category-wise breakdown with pie and bar charts via Recharts",
+      "Monthly summary with total income, expenses, and net balance",
+      "Filter transactions by date range or category",
+      "LocalStorage persistence — no backend needed",
+      "Export transactions as CSV for external use",
+    ],
+    techStack: [
+      { name: "React", purpose: "Frontend UI" },
+      { name: "Recharts", purpose: "Data visualization" },
+      { name: "LocalStorage", purpose: "Client-side persistence" },
+      { name: "Tailwind CSS", purpose: "Styling" },
+    ],
+    screenshots: [
+      "/Rag/RAGpic.png",
+      "/Rag/RAGpic2.png",
     ],
   },
 ];
@@ -128,278 +186,193 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-        <p style={{ color: "rgb(255, 255, 255)", fontFamily: "var(--font-inter)" }}>Project not found.</p>
-      </div>
+      <>
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <ReflectBackground />
+        </div>
+        <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <p style={{ color: "#fff", fontFamily: "var(--font-inter)" }}>Project not found.</p>
+        </div>
+      </>
     );
   }
 
   return (
-    <div
-  style={{
-    minHeight: "100vh",
-    width: "100%",
-    background:
-      "linear-gradient(135deg, #240051 0%, #290046b3 25%, #220443 50%, #1c0648 75%, #300031a2 100%)",
-    padding: "40px 60px",
-    boxSizing: "border-box",
-  }}
->
-  <div
-    style={{
-      width: "100%",
-      maxWidth: "1400px",
-      margin: "0 auto",
-    }}
-  >
-    {/* BACK BUTTON */}
-    <button
-      onClick={() => router.back()}
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 8,
-        color: "rgb(255, 255, 255)",
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        fontSize: 14,
-        marginBottom: 30,
-        padding: 0,
-        fontFamily: "var(--font-inter)",
-        transition: "opacity 0.2s ease",
-      }}
-    >
-      <ArrowLeft size={16} style={{marginBottom:'2px'}} /> Back to Projects
-    </button>
+    <>
+      {/* Background fixed behind everything */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <ReflectBackground />
+      </div>
 
-    {/* HEADER */}
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: 16,
-        marginBottom: 12,
-        flexWrap: "wrap",
-      }}
-    >
-      <span
-        style={{
-          padding: "4px 14px",
-          background: "rgba(39, 197, 11, 0.52)",
-          border: "1px solid rgba(0, 165, 14, 0.58)",
-          borderRadius: 20,
-          fontFamily: "var(--font-inter)",
-          fontSize: 12,
-          color: "#ffffff",
-        }}
-      >
-        {project.status}
-      </span>
-
-      <span
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 6,
-          fontSize: 13,
-          color: "rgb(255, 255, 255)",
-          marginBottom: '4px',
-        }}
-      >
-        <Clock size={14} style={{marginTop:'2px'}} /> {project.duration}
-      </span>
-    </div>
-
-    {/* TITLE */}
-    <h1
-      style={{
-        fontSize: "clamp(2rem, 5vw, 3.2rem)",
-        fontWeight: 800,
-        color: "#e2d9f3",
-        marginBottom: 20,
-        fontFamily: "var(--font-michroma)",
-      }}
-    >
-      {project.title}
-    </h1>
-
-    {/* OVERVIEW */}
-    <p
-      style={{
-        fontSize: 15,
-        lineHeight: 1.8,
-        fontFamily: "var(--font-inter)",
-        color: "rgb(255, 255, 255)",
-        marginBottom: 30,
-      }}
-    >
-      {project.overview}
-    </p>
-
-    {/* SCREENSHOTS */}
-    <div style={{ marginBottom: 28 }}>
-      <h2
-        style={{
-          fontSize: 16,
-          fontWeight: 700,
-          color: "#ffffff",
-          marginBottom: 20,
-          fontFamily: "var(--font-inter)",
-        }}
-      >
-        Screenshots
-      </h2>
-
+      {/* Scrollable content on top */}
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: 16,
+          position: "relative",
+          zIndex: 10,
+          minHeight: "100vh",
+          width: "100%",
+          padding: "clamp(16px, 4vw, 40px)",
+          boxSizing: "border-box",
+          overflowX: "hidden",
         }}
       >
-        {project.screenshots && project.screenshots.length > 0 ? (
-          project.screenshots.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt={`${project.title} screenshot ${i + 1}`}
-              style={{
-                width: "100%",
-                borderRadius: 10,
-                border: "1px solid rgba(168,85,247,0.2)",
-                objectFit: "cover",
-              }}
-            />
-          ))
-        ) : (
-          <div
+        <div style={{ width: "100%", maxWidth: "1100px", margin: "0 auto" }}>
+
+          <button
+            onClick={() => router.back()}
             style={{
-              padding: "40px",
-              border: "1px dashed rgba(168,85,247,0.2)",
-              borderRadius: 10,
-              textAlign: "center",
-              color: "rgba(255,255,255,0.2)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              color: "#fff",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
               fontSize: 13,
+              marginBottom: 24,
+              fontFamily: "var(--font-inter)",
             }}
           >
-            Screenshots coming soon
-          </div>
-        )}
-      </div>
-    </div>
+            <ArrowLeft size={16} />
+            Back to Projects
+          </button>
 
-    {/* FEATURES */}
-    <div
-      style={{
-        border: "1px solid rgba(168,85,247,0.2)",
-        borderRadius: 14,
-        padding: "24px",
-        marginBottom: 28,
-        fontFamily: "var(--font-inter)",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: 16,
-          fontWeight: 700,
-          color: "#ffffff",
-          marginBottom: 20,
-        }}
-      >
-        Key Features
-      </h2>
-<ul
-  style={{
-    listStyle: "none",
-    display: "grid",
-    gridTemplateColumns: "1fr",
-    gap: 12,
-    fontFamily: "var(--font-inter)",
-  }}
->
-  {project.features.map((f, i) => (
-    <li
-      key={i}
-      style={{
-        display: "flex",
-        gap: 10,
-        fontSize: 14,
-        color: "rgb(255, 255, 255)",
-        lineHeight: 1.6,
-        fontFamily: "var(--font-inter)",
-      }}
-    >
-      <CheckCircle
-        size={15}
-        style={{ color: "#a855f7", marginTop: 3 }}
-      />
-      {f}
-    </li>
-  ))}
-</ul>
-    </div>
-
-    {/* TECH STACK */}
-    <div
-      style={{
-        border: "1px solid rgba(168,85,247,0.2)",
-        borderRadius: 14,
-        padding: "24px",
-      }}
-    >
-      <h2
-        style={{
-          fontSize: 16,
-          fontWeight: 700,
-          color: "#ffffff",
-          marginBottom: 20,
-          fontFamily: "var(--font-inter)",
-        }}
-      >
-        Tech Stack
-      </h2>
-
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 12,
-        }}
-      >
-        {project.techStack.map((tech, i) => (
-          <div
-            key={i}
-            style={{
-              padding: "10px 18px",
-              border: "1px solid rgba(168,85,247,0.3)",
-              background: "rgba(168,85,247,0.07)",
-              borderRadius: 8,
-            }}
-          >
-            <p
+          {/* CENTER TITLE */}
+          <div style={{ width: "100%", display: "flex", justifyContent: "center", textAlign: "center", marginBottom: 20 }}>
+            <h1
               style={{
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#ffffff",
+                fontSize: "clamp(2.3rem, 5vw, 3.2rem)",
+                fontWeight: 800,
+                color: "#b18cf5",
+                fontFamily: "var(--font-michroma)",
+                letterSpacing: "1px",
+                maxWidth: "900px",
+              }}
+            >
+              {project.title}
+            </h1>
+          </div>
+
+          {/* HEADER */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 10, flexWrap: "wrap" }}>
+            <span
+              style={{
+                padding: "4px 12px",
+                background: "rgba(39, 197, 11, 0.4)",
+                border: "1px solid rgba(0, 165, 14, 0.5)",
+                borderRadius: 20,
                 fontFamily: "var(--font-inter)",
-              }}
-            >
-              {tech.name}
-            </p>
-            <p
-              style={{
                 fontSize: 11,
-                color: "rgba(255, 255, 255, 0.65)",
+                color: "#fff",
               }}
             >
-              {tech.purpose}
-            </p>
+              {project.status}
+            </span>
+            <span style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "#fff" }}>
+              <Clock size={14} />
+              {project.duration}
+            </span>
           </div>
-        ))}
+
+          {/* OVERVIEW */}
+          <p
+            style={{
+              fontSize: 14,
+              lineHeight: 1.7,
+              fontFamily: "var(--font-inter)",
+              color: "#fff",
+              marginBottom: 24,
+            }}
+          >
+            {project.overview}
+          </p>
+
+          {/* SCREENSHOTS */}
+          <div style={{ marginBottom: 24 }}>
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 14 }}>Screenshots</h2>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
+              {project.screenshots?.length > 0 ? (
+                project.screenshots.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${project.title} screenshot ${i + 1}`}
+                    style={{
+                      width: "100%",
+                      borderRadius: 12,
+                      border: "1px solid rgba(168,85,247,0.2)",
+                      objectFit: "cover",
+                    }}
+                  />
+                ))
+              ) : (
+                <div
+                  style={{
+                    padding: "30px",
+                    border: "1px dashed rgba(168,85,247,0.2)",
+                    borderRadius: 10,
+                    textAlign: "center",
+                    color: "rgba(255,255,255,0.3)",
+                    fontSize: 12,
+                    gridColumn: "span 2",
+                  }}
+                >
+                  Screenshots coming soon
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* FEATURES */}
+          <div
+            style={{
+              border: "1px solid rgba(168,85,247,0.2)",
+              borderRadius: 14,
+              padding: "20px",
+              marginBottom: 24,
+            }}
+          >
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 14 }}>Key Features</h2>
+            <ul style={{ listStyle: "none", display: "grid", gridTemplateColumns: "1fr", gap: 10 }}>
+              {project.features?.map((f, i) => (
+                <li key={i} style={{ display: "flex", gap: 10, fontSize: 13, color: "#fff", lineHeight: 1.6 }}>
+                  <CheckCircle size={14} style={{ color: "#b18cf5", marginTop: 3 }} />
+                  {f}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* TECH STACK */}
+          <div
+            style={{
+              border: "1px solid rgba(168,85,247,0.2)",
+              borderRadius: 14,
+              padding: "20px",
+              marginBottom: 40,
+            }}
+          >
+            <h2 style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 14 }}>Tech Stack</h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+              {project.techStack?.map((tech, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: "8px 12px",
+                    border: "1px solid #48474a",
+                    background: "rgba(168,85,247,0.07)",
+                    borderRadius: 8,
+                  }}
+                >
+                  <p style={{ fontSize: 12, fontWeight: 700, color: "#fff", margin: 0 }}>{tech.name}</p>
+                  <p style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", margin: 0 }}>{tech.purpose}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </>
   );
 }
