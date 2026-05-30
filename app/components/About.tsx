@@ -22,7 +22,7 @@ export default function About() {
       transition={{ duration: 0.7 }}
       className="flex justify-center"
     >
-      <div className="relative group w-full max-w-[320px] md:max-w-[420px] aspect-[4/5]" style={{marginBottom:'50px'}}>
+      <div className="relative group w-full max-w-[280px] md:max-w-[420px] aspect-[4/5]" style={{marginBottom:'50px'}}>
         <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
 

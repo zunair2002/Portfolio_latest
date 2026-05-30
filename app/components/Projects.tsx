@@ -68,146 +68,152 @@ export default function Projects() {
   const inView = useInView(ref, { once: false, margin: "-10px" });
 
   return (
-    <section id="projects" ref={ref} className="w-full py-12 md:py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        style={{ textAlign: "center", marginBottom: 60 }}
-      >
-        <h2
-        className="text-4xl md:text-6xl font-black"
-          style={{
-            fontFamily: "var(--font-michroma)", 
-            color: '#b18cf5',
-          }}
-        >
-          My Projects
-        </h2>
-      </motion.div>
+   <section id="projects" ref={ref} className="w-full py-8 md:py-16">
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={inView ? { opacity: 1, y: 0 } : {}}
+    transition={{ duration: 0.6 }}
+    style={{ textAlign: "center", marginBottom: 60 }}
+  >
+    <h2
+      className="text-3xl md:text-6xl font-black"
+      style={{
+        fontFamily: "var(--font-michroma)",
+        color: "#b18cf5",
+      }}
+    >
+      My Projects
+    </h2>
+  </motion.div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {demoprojects.map((project, i) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 40 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: i * 0.12 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
+<div className="max-w-6xl mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">    {demoprojects.map((project, i) => (
+      <motion.div
+        key={project.id}
+        initial={{ opacity: 0, y: 40 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: i * 0.12 }}
+        whileHover={{ y: -6, transition: { duration: 0.2 } }}
+        style={{
+          border: "1px solid rgba(255, 255, 255, 0.56)",
+          borderRadius: 14,
+          padding: "18px 16px",
+          display: "flex",
+          flexDirection: "column",
+          gap: 12,
+          cursor: "default",
+          background: "rgba(255, 255, 255, 0.03)",
+          backdropFilter: "blur(10px)",
+          margin:"5px"
+        }}
+      >
+        <div>
+          <h3
             style={{
-              border: "1px solid rgba(255, 255, 255, 0.56)",
-              borderRadius: 14,
-              padding: "28px 24px",
-              display: "flex",
-              flexDirection: "column",
-              gap: 16,
-              cursor: "default",
-               background: "rgba(255, 255, 255, 0.03)",
-                backdropFilter: "blur(10px)",
+              fontFamily: "var(--font-michroma)",
+              fontSize: "clamp(1rem, 2vw, 1.3rem)",
+              fontWeight: 700,
+              color: "#e2d9f3",
+              marginBottom: 10,
             }}
           >
-            <div>
-              <h3
-                style={{
-                                      fontFamily: "var(--font-michroma)",
+            {project.title}
+          </h3>
 
-                  fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
-                  fontWeight: 700,
-                  color: "#e2d9f3",
-                  marginBottom: 12,
-                }}
-              >
-                {project.title}
-              </h3>
-              <p
-                className="leading-relaxed whitespace-pre-line"
-                style={{
-                  fontSize: "clamp(0.85rem, 1.2vw, 0.93rem)",
-                  lineHeight: 1.7,
-                  color: "rgba(255,255,255,0.72)",
-                  fontFamily: "var(--font-inter)",
-                }}
-              >
-                {project.description}
-              </p>
-            </div>
+          <p
+            className="leading-relaxed whitespace-pre-line"
+            style={{
+              fontSize: "clamp(0.8rem, 1.2vw, 0.93rem)",
+              lineHeight: 1.7,
+              color: "rgba(255,255,255,0.72)",
+              fontFamily: "var(--font-inter)",
+            }}
+          >
+            {project.description}
+          </p>
+        </div>
 
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: "auto" }}>
-              {project.tags.map((tag, j) => (
-                <span
-                  key={j}
-                  style={{
-                    padding: "4px 12px",
-                    border: "1px solid #48474a",
-                    background: "rgba(255, 255, 255, 0.05)",
-                    borderRadius: 4,
-                    fontSize: 12,
-                    fontFamily: "var(--font-inter)",
-                    color: "rgb(255, 255, 255)",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 6,
+            marginTop: "auto",
+          }}
+        >
+          {project.tags.map((tag, j) => (
+            <span
+              key={j}
+              style={{
+                padding: "3px 10px",
+                border: "1px solid #48474a",
+                background: "rgba(255, 255, 255, 0.05)",
+                borderRadius: 4,
+                fontSize: 11,
+                fontFamily: "var(--font-inter)",
+                color: "rgb(255, 255, 255)",
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
 
-            <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
-             <a
-  href={project.githubUrl}
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    flex: 1,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 7,
-    padding: "10px 0",
-    background: "rgba(255, 255, 255, 0.12)",
-    borderRadius: 8,
-    color: "#ffffff",
-    fontSize: 13,
-    textDecoration: "none",
-    fontWeight: 500,
-    backdropFilter: "blur(10px)",
-    WebkitBackdropFilter: "blur(10px)",
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.background = "rgba(255, 255, 255, 0.18)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-  }}
->
-  <Box size={15} /> Code
-</a>
-              <Link
-                href={`/demoprojects/${project.id}`}
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 7,
-                  padding: "10px 0",
-                  background: "#ffffff",
-                  border: "1px solid rgba(0,0,0,0.08)",
-                  borderRadius: 8,
-                  color: "#000000",
-                  fontSize: 13,
-                  textDecoration: "none",
-                  fontWeight: 500,
-                  transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.85"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
-              >
-                <ExternalLink size={15} /> Demo
-              </Link>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
+        <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 7,
+              padding: "8px 0",
+              background: "rgba(255, 255, 255, 0.12)",
+              borderRadius: 8,
+              color: "#ffffff",
+              fontSize: 12,
+              textDecoration: "none",
+              fontWeight: 500,
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+            }}
+          >
+            <Box size={15} /> Code
+          </a>
+
+          <Link
+            href={`/demoprojects/${project.id}`}
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 7,
+              padding: "8px 0",
+              background: "#ffffff",
+              border: "1px solid rgba(0,0,0,0.08)",
+              borderRadius: 8,
+              color: "#000000",
+              fontSize: 12,
+              textDecoration: "none",
+              fontWeight: 500,
+              transition: "opacity 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.opacity = "0.85";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.opacity = "1";
+            }}
+          >
+            <ExternalLink size={15} /> Demo
+          </Link>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
   );
 }

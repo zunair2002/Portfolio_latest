@@ -10,22 +10,26 @@ const demoprojects = [
     status: "Working",
     duration: "2 months",
     overview:
-      "SabziMart is a full-stack grocery delivery platform that connects customers, delivery riders, and admins through a single unified system. Built with scalability in mind, it handles real-time order tracking, role-based access, and a smooth end-to-end delivery workflow.",
-    features: [
+
+"SabziMart is a full-stack grocery delivery platform that connects customers, delivery riders, and admins through a single unified system. Built with scalability in mind, it ensures smooth performance across all operations. It handles real-time order tracking, role-based access, and secure authentication. Providing a seamless end-to-end grocery delivery workflow experience.",   
+features: [
       "Customer, Rider, and Admin dashboards with role-based access",
       "Real-time order tracking with live status updates",
-      "Secure JWT-based authentication for all user types",
+      "Secure NextAuth-based authentication for all user types",
       "Product catalog with category filters and search",
       "Order management system with history and invoices",
       "Rider assignment and delivery route management",
     ],
     techStack: [
       { name: "React", purpose: "Frontend UI" },
-      { name: "Node.js", purpose: "Backend runtime" },
+      { name: "Styling", purpose: "Tailwind CSS" },
+      { name: "TypeScript.js", purpose: "Backend runtime" },
       { name: "Express", purpose: "REST API framework" },
       { name: "MongoDB", purpose: "Database" },
       { name: "JWT", purpose: "Authentication" },
       { name: "Socket.io", purpose: "Real-time updates" },
+      { name: "Leaflet", purpose: "Real-time tracking" },
+      { name: "Cloudinary", purpose: "Image hosting" },
     ],
     screenshots: [
       "/sabzimart/Screenshot 2026-04-23 102633.png",
@@ -43,7 +47,7 @@ const demoprojects = [
     status: "Completed",
     duration: "2 weeks",
     overview:
-      "ChatGO is a real-time messaging platform that allows users to communicate instantly through private and group chats. Built on Socket.io, it delivers messages with zero delay and ensures secure sessions via JWT authentication.",
+"ChatGO is a real-time messaging platform that allows users to communicate instantly through private and group chats. Built on Socket.io, it delivers messages with zero delay and ensures real-time communication between users. It uses JWT authentication to provide secure and protected user sessions. The platform is designed for fast, reliable, and scalable messaging experience.",
     features: [
       "Real-time one-to-one and group messaging via Socket.io",
       "Secure user registration and login with JWT",
@@ -72,7 +76,7 @@ const demoprojects = [
     status: "Completed",
     duration: "1 weeks",
     overview:
-      "WalletWave is a sleek crypto dashboard that aggregates live market data for top cryptocurrencies. Users can monitor prices, market caps, and volume changes at a glance, with an interactive Bitcoin price chart powered by Chart.js.",
+"WalletWave is a sleek crypto dashboard that aggregates live market data for top cryptocurrencies. It allows users to monitor prices, market caps, and volume changes in real time. The platform provides an interactive Bitcoin price chart powered by Chart.js. It is designed for a smooth and intuitive crypto tracking experience.",
     features: [
       "Live price feeds for top 20 cryptocurrencies via CoinGecko API",
       "Interactive Bitcoin price chart with 7-day and 30-day views",
@@ -107,7 +111,7 @@ const demoprojects = [
       "Category-wise breakdown with pie and bar charts via Recharts",
       "Monthly summary with total income, expenses, and net balance",
       "Filter transactions by date range or category",
-      "LocalStorage persistence — no backend needed",
+      "LocalStorage persistence no backend needed",
       "Export transactions as CSV for external use",
     ],
     techStack: [
@@ -128,27 +132,30 @@ const demoprojects = [
     title: "Email Checker",
     status: "Completed",
     duration: "1 weeks",
-    overview:
-      "Expense Tracker is a personal finance tool that helps users log income and expenses, categorize transactions, and visualize spending patterns through clean charts. All data is persisted locally so nothing is lost on refresh.",
-    features: [
-      "Add, edit, and delete income and expense transactions",
-      "Category-wise breakdown with pie and bar charts via Recharts",
-      "Monthly summary with total income, expenses, and net balance",
-      "Filter transactions by date range or category",
-      "LocalStorage persistence — no backend needed",
-      "Export transactions as CSV for external use",
-    ],
-    techStack: [
-      { name: "React", purpose: "Frontend UI" },
-      { name: "Recharts", purpose: "Data visualization" },
-      { name: "LocalStorage", purpose: "Client-side persistence" },
-      { name: "Tailwind CSS", purpose: "Styling" },
-    ],
+   overview:
+  "Email Spam/Ham Detector is a machine learning based classification tool that helps users identify whether an email is spam or legitimate (ham). It analyzes email content, patterns, and keywords to provide accurate predictions. The system can be extended with visualization of prediction results and stores no sensitive data permanently.",
+
+features: [
+  "Classify emails as Spam or Ham using trained model",
+  "Text preprocessing including tokenization and cleaning",
+  "Keyword and pattern-based feature extraction",
+  "Real-time prediction of email input",
+  "Display confidence score for predictions",
+  "Simple UI for testing multiple email samples",
+],
+
+techStack: [
+  { name: "React", purpose: "Frontend UI" },
+  { name: "Python", purpose: "ML backend logic" },
+  { name: "Scikit-learn", purpose: "Model training & prediction" },
+  { name: "Pandas", purpose: "Data processing" },
+  { name: "NLTK", purpose: "Text preprocessing" },
+  { name: "NLTK", purpose: "Text preprocessing" },
+  { name: "REST api", purpose: "Communication" },
+],
     screenshots: [
-      "/expensetracker/e1.png",
-      "/expensetracker/e2.png",
-      "/expensetracker/e3.png",
-      "/expensetracker/e4.png"
+      "/emailchecker/emailchcher2.png",
+      "/emailchecker/emailchecker.png",
     ],
   },
   {
@@ -157,20 +164,22 @@ const demoprojects = [
     status: "Completed",
     duration: "1 weeks",
     overview:
-      "Expense Tracker is a personal finance tool that helps users log income and expenses, categorize transactions, and visualize spending patterns through clean charts. All data is persisted locally so nothing is lost on refresh.",
+"RAG (Retrieval-Augmented Generation) is an AI technique that combines information retrieval with text generation to produce more accurate and context-aware responses. It works by first retrieving relevant data from external sources such as databases, documents, or knowledge bases. This retrieved information is then provided to a generative model, which uses it to create a final response. By grounding outputs in real data, RAG improves accuracy and reduces hallucinations or incorrect answers.",
     features: [
-      "Add, edit, and delete income and expense transactions",
-      "Category-wise breakdown with pie and bar charts via Recharts",
-      "Monthly summary with total income, expenses, and net balance",
-      "Filter transactions by date range or category",
-      "LocalStorage persistence — no backend needed",
-      "Export transactions as CSV for external use",
+      "Retrieves relevant information from external sources (documents, database, etc.)",
+      "Uses retrieved data to generate accurate responses",
+"Combines search + AI generation in one system",
+"Reduces wrong or hallucinated answers",
+"Works well for chatbots and document-based Q&A systems",
+"Provides context-aware and up-to-date responses"
     ],
     techStack: [
-      { name: "React", purpose: "Frontend UI" },
-      { name: "Recharts", purpose: "Data visualization" },
-      { name: "LocalStorage", purpose: "Client-side persistence" },
-      { name: "Tailwind CSS", purpose: "Styling" },
+      { name: "React", purpose: "UI" },
+  { name: "Node.js", purpose: "Server" },
+  { name: "Express", purpose: "API" },
+  { name: "Vector DB", purpose: "Retrieval" },
+  { name: "OpenAI / LLM", purpose: "Generation" },
+
     ],
     screenshots: [
       "/Rag/RAGpic.png",
@@ -353,22 +362,27 @@ export default function ProjectDetail() {
             }}
           >
             <h2 style={{ fontSize: 15, fontWeight: 700, color: "#fff", marginBottom: 14 }}>Tech Stack</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-              {project.techStack?.map((tech, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: "8px 12px",
-                    border: "1px solid #48474a",
-                    background: "rgba(168,85,247,0.07)",
-                    borderRadius: 8,
-                  }}
-                >
-                  <p style={{ fontSize: 12, fontWeight: 700, color: "#fff", margin: 0 }}>{tech.name}</p>
-                  <p style={{ fontSize: 10, color: "rgba(255,255,255,0.6)", margin: 0 }}>{tech.purpose}</p>
-                </div>
-              ))}
-            </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+  {project.techStack?.map((tech, i) => (
+    <div
+      key={i}
+      style={{
+        padding: "2px 9px",
+        border: "1px solid rgba(168,85,247,0.4)",
+        background: "rgba(255, 255, 255, 0.05)",
+        borderRadius: 4,
+        fontSize: window.innerWidth < 768 ? 10 : 12,
+        fontFamily: "var(--font-inter)",
+        color: "rgb(255, 255, 255)",
+      }}
+    >
+      <p style={{ margin: 0 }}>{tech.name}</p>
+      <p style={{ margin: 0, fontSize: window.innerWidth < 768 ? 8 : 10, color: "rgba(255,255,255,0.6)" }}>
+        {tech.purpose}
+      </p>
+    </div>
+  ))}
+</div>
           </div>
 
         </div>

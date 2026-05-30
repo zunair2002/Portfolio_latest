@@ -39,14 +39,19 @@ export default function Hero() {
   </motion.h1>
 </motion.div>
 
-  <motion.p
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 0.6, delay: 0.5 }}
-    className="text-[22px] tracking-[0.3em] text-white mb-6 uppercase font-bold" style={{marginBottom:'12px', fontFamily:"var(--font-inter)",color: '#b18cf5',}}
-  >
-    {heroData.title}
-  </motion.p>
+ <motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.6, delay: 0.5 }}
+  className="text-[14px] md:text-[22px] tracking-[0.2em] md:tracking-[0.3em] text-white mb-3 md:mb-6 uppercase font-bold whitespace-nowrap"
+  style={{
+    marginBottom: "12px",
+    fontFamily: "var(--font-inter)",
+    color: "#b18cf5",
+  }}
+>
+  {heroData.title}
+</motion.p>
 
   <motion.p
     initial={{ opacity: 0, y: 20 }}

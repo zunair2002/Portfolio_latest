@@ -17,7 +17,7 @@ className="sticky top-3 z-50 navv flex items-center justify-between border-0 bor
       className="text-lg md:text-xl text-white"
       style={{ fontFamily: "'Segoe Script', cursive" }}
     >
-      Z.Shahid
+      Z.S
     </span>
   </div>
 

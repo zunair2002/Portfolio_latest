@@ -43,7 +43,7 @@ export default function Home() {
           </section>
 
           <section className="w-full flex justify-center py-12 md:py-24">
-            <div className={pageShell}>
+            <div className={pageShell} style={{ marginTop: "60px" }}>
               <About />
             </div>
           </section>
