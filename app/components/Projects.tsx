@@ -8,58 +8,76 @@ import Link from "next/link";
 const demoprojects = [
   {
     id: 1,
-    title: "SabziMart",
+    title: "Ruler.ui",
     description:
-      "SabziMart is a grocery delivery platform built for customers riders and admins on a secure and unified system. It provides a reliable end to end workflow from order to delivery. The platform is designed for scalability performance and a smooth user experience.",
-    tags: ["React", "TypeScript", "MongoDB", "Express", "Socket.IO","Leftlet","Cloudinary","NextAuth"],
-    githubUrl: "https://github.com/zunair2002/SabziMart",
-    demoUrl: "/demoprojects/1",
+      "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds. Helps developers ship consistent, accessible interfaces faster.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "tsup", "Design System", "Component Library", "ESM/CJS"],
+    githubUrl: "YOUR_RULER_UI_GITHUB_URL",
   },
   {
     id: 2,
-    title: "ChatGO",
+    title: "OrchestrAI",
     description:
-"A real-time chat application with Socket.io enables instant messaging through a live connection between users and the server. It uses secure authentication to protect user data and ensure only verified access. The system is responsive and scalable, delivering smooth performance across all devices.",
-    tags: ["React", "Socket.io", "Express", "JWT", "MongoDB"],
-    githubUrl: "https://github.com/zunair2002/ChatGO",
-    demoUrl: "/demoprojects/2",
+      "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching for fast answers. Lets teams automate complex workflows with context-aware AI.",
+    tags: ["React", "Redux", "Node.js", "Express", "LangChain", "LangGraph", "RAG", "Embeddings", "MongoDB", "Redis", "Gemini", "Grok", "Multi-Agent Systems"],
+    githubUrl: "YOUR_ORCHESTRAI_GITHUB_URL",
   },
   {
     id: 3,
-    title: "WalletWave",
+    title: "RAG System",
     description:
-"A modern crypto-wallet interface that displays live cryptocurrency data and key information for popular coins in real time. It includes an interactive Bitcoin chart that helps users track market trends and price movements. The system provides a clean and responsive design for smooth user experience across devices.",
-    tags: ["React", "CoinGecko API", "Chart.js", "Tailwind"],
-    githubUrl: "https://github.com/zunair2002/WalletWave",
-    demoUrl: "/demoprojects/3",
+      "An AI chatbot that gives accurate, context-aware answers using RAG, semantic search, and a Pinecone vector database, built with LangChain and FastAPI. Improves answer relevance and reduces made-up responses.",
+    tags: ["React", "Tailwind CSS", "Node.js", "Express", "FastAPI", "Python", "LangChain", "LangGraph", "Pinecone", "Vector Database", "Semantic Search", "RAG", "LLM"],
+    githubUrl: "https://github.com/zunair2002/RAG-application",
   },
   {
     id: 4,
-    title: "Expense Tracker",
+    title: "SabziMart",
     description:
-      "An expense tracker logs all your income and spending using simple charts to show exactly where your money goes. This helps you easily understand your financial habits and make smarter plans for your budget.",
-    tags: ["React", "LocalStorage", "MongoDB", "Express", "Recharts", "Tailwind"],
-    githubUrl: "https://github.com/zunair2002/ExpenseApp-MERN",
-    demoUrl: "/demoprojects/4",
+      "A full-stack grocery delivery platform for customers, riders, and admins, with real-time order tracking, role-based access, and secure login. Connects the whole delivery process in one reliable system.",
+    tags: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Socket.IO", "Leaflet", "Cloudinary", "NextAuth", "RBAC", "Full-Stack", "Real-Time"],
+    githubUrl: "https://github.com/zunair2002/SabziMart",
   },
-  // https://github.com/zunair2002/phishing-ML
   {
     id: 5,
-    title: "Email Checker",
-    description:`AI-integrated checkers evaluate message tone and intent to classify them as legitimate or suspicious. The system provides clear reasoning for its decision, flagging suspicious patterns or confirming legitimate professional language to ensure your inbox remains secure and transparent.`,
-    tags: ["React", "Tailwind","AI", "Python", "Machine Learning","grokAI-SDK","Rest API"],
-    githubUrl: "https://github.com/zunair2002/phishing-ML",
-    demoUrl: "/demoprojects/5",
+    title: "WalletWave",
+    description:
+      "A real-time cryptocurrency dashboard that shows live market data and interactive Bitcoin price charts using the CoinGecko API and Chart.js. Makes market trends easy to follow on any device.",
+    tags: ["React", "JavaScript", "CoinGecko API", "REST API", "Chart.js", "Tailwind CSS", "Data Visualization", "Responsive Design"],
+    githubUrl: "https://github.com/zunair2002/WalletWave",
   },
   {
     id: 6,
-    title: "RAG System",
+    title: "ChatGO",
     description:
-      "AI Chatbot (RAG-Based) Developed an AI chatbot using Retrieval-Augmented Generation (RAG) to provide accurate and context-aware responses. Used LangChain, LangGraph, and a vector database to improve information retrieval and enhance the overall user experience.",
-    tags: ["React","TailwindCSS", "Express", "Embedding Model","VectorDB","GoogleAI-SDK"],
-    githubUrl: "https://github.com/zunair2002/RAG-application",
-    demoUrl: "/demoprojects/6",
+      "A real-time chat application using Socket.IO and WebSockets for instant messaging, with JWT authentication and MongoDB message storage. Delivers a fast, secure, and responsive conversation experience.",
+    tags: ["React", "Node.js", "Express", "Socket.IO", "WebSockets", "JWT", "Authentication", "MongoDB", "Real-Time", "REST API"],
+    githubUrl: "https://github.com/zunair2002/ChatGO",
   },
+  {
+    id: 7,
+    title: "Email Checker",
+    description:
+      "An AI-powered phishing detector that uses machine learning and NLP to analyze emails and explain why a message looks safe or suspicious. Helps users spot threats and make safer decisions.",
+    tags: ["React", "Tailwind CSS", "Python", "Machine Learning", "NLP", "Grok AI SDK", "REST API", "Phishing Detection", "Cybersecurity", "Explainable AI"],
+    githubUrl: "https://github.com/zunair2002/phishing-ML",
+  },
+  {
+    id: 8,
+    title: "Expense Tracker",
+    description:
+      "A MERN stack finance dashboard that tracks income and expenses and shows spending habits through interactive Recharts visualizations. Helps users manage budgets and build smarter money habits.",
+    tags: ["React", "MongoDB", "Express", "Node.js", "MERN Stack", "Recharts", "Tailwind CSS", "LocalStorage", "REST API", "Data Visualization", "CRUD"],
+    githubUrl: "https://github.com/zunair2002/ExpenseApp-MERN",
+  },
+  {
+  id: 9,
+  title: "AI Voice Assistant",
+  description:
+    "A Python desktop voice assistant that recognizes spoken commands and responds with text-to-speech, enabling hands-free web searches, music playback, time queries, and everyday task automation.",
+  tags: ["Python", "Tkinter", "Speech Recognition", "Google Speech API", "pyttsx3", "Text-to-Speech", "PyAudio", "Desktop App", "Voice Commands"],
+  githubUrl: "YOUR_VOICE_ASSISTANT_GITHUB_URL",
+},
 ];
 
 export default function Projects() {
@@ -102,7 +120,8 @@ export default function Projects() {
           cursor: "default",
           background: "rgba(255, 255, 255, 0.03)",
           backdropFilter: "blur(10px)",
-          margin:"5px"
+          margin:"5px",
+          minHeight: "430px",
         }}
       >
         <div>
@@ -112,6 +131,7 @@ export default function Projects() {
               fontSize: "clamp(1rem, 2vw, 1.3rem)",
               fontWeight: 700,
               color: "#e2d9f3",
+              marginTop: 0,
               marginBottom: 10,
             }}
           >
@@ -125,6 +145,13 @@ export default function Projects() {
               lineHeight: 1.7,
               color: "rgba(255,255,255,0.72)",
               fontFamily: "var(--font-inter)",
+              // Keep every card's description and tag sections visually aligned.
+              height: "10.2em",
+              margin: 0,
+              overflow: "hidden",
+              display: "-webkit-box",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 6,
             }}
           >
             {project.description}
@@ -136,7 +163,8 @@ export default function Projects() {
             display: "flex",
             flexWrap: "wrap",
             gap: 6,
-            marginTop: "auto",
+            minHeight: "116px",
+            alignContent: "flex-start",
           }}
         >
           {project.tags.map((tag, j) => (
@@ -157,7 +185,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div style={{ display: "flex", gap: 10, marginTop: 4 }}>
+        <div style={{ display: "flex", gap: 10, marginTop: "auto" }}>
           <a
             href={project.githubUrl}
             target="_blank"

@@ -30,17 +30,31 @@ export default function CertificationPage() {
       link: "/CertificationPics/MERN.png",
     },
     {
-      title: "UI/UX Design",
-      issuer: "Udemy",
+      title: "Data Transformation",
+      issuer: "MongoDB",
       description:
-        "User experience research, wireframing, prototyping, and designing user-centered interfaces using Figma.",
-      link: "/CertificationPics/Figmaa.png",
+        "Hands-on practice with aggregation pipelines for filtering, grouping, transforming, and analyzing real-world MongoDB data.",
+      link: "/CertificationPics/MongoDB.png",
+    },
+    {
+      title: "Prompt Engineering",
+      issuer: "Amazon Web Services",
+      description:
+        "Practical foundation in LLMs, structured prompting, and context management for reliable AI-powered applications.",
+      link: "/CertificationPics/prompt.png",
+    },
+    {
+      title: "Machine Learning",
+      issuer: "Deeplearning.AI",
+      description:
+        "Practical experience with TensorFlow, neural networks, and deep learning for real-world machine learning applications.",
+      link: "/CertificationPics/Screenshot 2026-07-16 133748.png",
     },
     {
       title: "Alzheimer’s Pakistan",
       issuer: "Alzheimer’s",
       description:
-        "Advanced design systems, usability testing, and creating production-ready UI/UX workflows.",
+        "Participated in Alzheimer’s awareness sessions, promoting community education and public awareness.",
       link: "/CertificationPics/WhatsApp Image 2026-04-23 at 10.16.18 AM.jpeg",
     },
   ];
@@ -160,18 +174,38 @@ export default function CertificationPage() {
                 </h3>
 
                 {/* IMAGE */}
-               <img
-  src={item.link}
-  alt={item.title}
-  style={{
-    width: "100%",
-    height: "180px",
-    objectFit: "fill",   
-    borderRadius: "12px",
-    marginBottom: "12px",
-    border: "1px solid rgba(255,255,255,0.12)",
-  }}
-/>
+                {item.link ? (
+                  <img
+                    src={item.link}
+                    alt={item.title}
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      objectFit: "fill",
+                      borderRadius: "12px",
+                      marginBottom: "12px",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                    }}
+                  />
+                ) : (
+                  <div
+                    aria-label={`${item.title} certificate image coming soon`}
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "12px",
+                      marginBottom: "12px",
+                      border: "1px dashed rgba(255,255,255,0.25)",
+                      color: "rgba(255,255,255,0.55)",
+                      fontSize: "12px",
+                    }}
+                  >
+                    Certificate image coming soon
+                  </div>
+                )}
 
                 {/* DESCRIPTION */}
                 <p

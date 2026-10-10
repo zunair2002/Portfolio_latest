@@ -139,24 +139,70 @@ export const skillsRow4 = [
 
 export const experienceData = [
   {
-  role: "Full-Stack Developer",
-company: "KiCad (Freelance)",
-period: "08 November, 25",
-points: [
-  "Worked on building clean and responsive web apps including landing pages and real-time reporting systems with CSV and PDF export features.",
-  "Also handled custom features like KiCad design work and improved data handling and workflows across different projects."
-],
-tags: ["React", "Node.js", "Express.js", "CSV", "Framer Motion"]
+    role: "Full-Stack Engineering (Freelance)",
+    company: "Fiverr, Remote",
+    period: "Nov 2025 - Dec 2025",
+    points: [
+      "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
+      "Developed a real-time client reporting tool with automated CSV and PDF exports and third-party API integrations, eliminating manual reporting processes.",
+      "Designed custom KiCad-based design automation software to streamline engineering workflows and automate engineering data export.",
+    ],
+    tags: [
+      "Next.js",
+      "SSR",
+      "Tailwind CSS",
+      "SEO",
+      "Core Web Vitals",
+      "REST APIs",
+      "Third-Party API Integration",
+      "CSV/PDF Export",
+      "KiCad",
+      "Design Automation",
+    ],
   },
   {
-  role: "Frontend Developer",
-company: "Persoanl Project",
-period: "20 january, 26",
-points: [
-  "Worked on designing and developing responsive, production-level web applications for multiple clients using React and Tailwind CSS with a strong focus on performance and user experience.",
-  "Built SabziMart, a production-ready grocery delivery platform for customers, riders, and admins using MongoDB and Redux, ensuring a secure and scalable end-to-end workflow."
-],
-tags: ["React", "Tailwind CSS","Framer-Motion","Nextjs","Redux","NextAuth", "SSR","Luclucide-react","MongoDB", "SocketIO", "Cloudinary","leaflet-Map"]
+    role: "Full-Stack Engineer (MERN Stack)",
+    company: "Self-Directed",
+    period: "Jan 2025 - Present",
+    points: [
+      "Developed and maintained full-stack web applications using React.js, Node.js, Express.js and MongoDB, following Agile practices across personal and practice projects.",
+      "Built RESTful APIs with JWT authentication, secure session management and role-based access control (RBAC) to ensure a scalable and secure backend architecture.",
+      "Built reusable React components (Hooks, Context API) and optimized SQL queries and schemas for better performance.",
+    ],
+    tags: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "MERN Stack",
+      "RESTful APIs",
+      "JWT",
+      "RBAC",
+      "Session Management",
+      "Hooks",
+      "Context API",
+      "SQL",
+      "Agile",
+    ],
+  },
+  {
+    role: "Research Intern, Blockchain & Quantum Computing",
+    company: "Bahria University",
+    period: "Jan 2026 - Feb 2026",
+    points: [
+      "Researched post-quantum cryptographic techniques and algorithms to strengthen blockchain security against emerging quantum computing threats.",
+      "Evaluated quantum-resilient blockchain architectures and consensus mechanisms to improve security, scalability and interoperability.",
+    ],
+    tags: [
+      "Blockchain",
+      "Quantum Computing",
+      "Post-Quantum Cryptography",
+      "Consensus Mechanisms",
+      "Security",
+      "Scalability",
+      "Interoperability",
+      "Research",
+    ],
   },
 ];
 
