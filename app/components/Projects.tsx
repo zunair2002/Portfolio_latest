@@ -12,7 +12,7 @@ const demoprojects = [
     description:
       "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds. Helps developers ship consistent, accessible interfaces faster.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "tsup", "Design System", "Component Library", "ESM/CJS"],
-    githubUrl: "YOUR_RULER_UI_GITHUB_URL",
+    githubUrl: "https://ruler-ui.vercel.app/",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const demoprojects = [
     description:
       "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching for fast answers. Lets teams automate complex workflows with context-aware AI.",
     tags: ["React", "Redux", "Node.js", "Express", "LangChain", "LangGraph", "RAG", "Embeddings", "MongoDB", "Redis", "Gemini", "Grok", "Multi-Agent Systems"],
-    githubUrl: "YOUR_ORCHESTRAI_GITHUB_URL",
+    githubUrl: "https://orchestrationai.netlify.app/",
   },
   {
     id: 3,
