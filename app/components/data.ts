@@ -2,7 +2,7 @@ export const heroData = {
   name: "Zunair Shahid",
   title: "FullStack AI Engineer",
   description:"I am a developer who enjoys building intuitive web applications and exploring emerging technologies. I focus on turning ideas into practical and user-friendly digital solutions",
-  resumeUrl: "/cv/Zunair%20Shahid%20Resume.pdf",
+  resumeUrl: "/cv/ZunairShahid_CV (1).pdf",
 };
 
 export const aboutData = {
@@ -14,7 +14,7 @@ On the frontend, I build responsive and user-friendly interfaces using React. On
 I also have experience with modern AI and data-driven technologies including Retrieval-Augmented Generation (RAG), LangChain, LangGraph, NumPy, and OpenCV, which help me integrate intelligent features like automation, natural language processing, and computer vision into web applications, while continuously improving and building impactful, efficient digital solutions.`
   ],
   location: "Lahore, Pakistan",
-  photoUrl: "/Myself/imgg.jpeg",
+  photoUrl: "/Myself/WhatsApp Image 2026-10-11 at 2.42.24 PM.jpeg",
 };
 
 export const skillsRow1 = [

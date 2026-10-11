@@ -22,7 +22,7 @@ export const demoprojects = [
       { name: "CVA", purpose: "Variant-based component styling" },
       { name: "tsup", purpose: "ESM/CJS bundling and tree-shaking" },
     ],
-    screenshots: ["Ruler1/ruler1.png", "Ruler2/ruler2.png", "Ruler3/ruler3.png", "Ruler4/ruler4.png"],
+    screenshots: ["/Rulerui/ruler1.png", "/Rulerui/ruler2.png", "/Rulerui/ruler3.png", "/Rulerui/ruler4.png"],
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ export const demoprojects = [
       { name: "MongoDB", purpose: "Persistent data storage" },
       { name: "Redis", purpose: "High-speed response caching" },
     ],
-    screenshots: ["/OrchestrAI/hemello.png", "/OrchestrAI/OrchestrPage.png"],
+    screenshots: ["/OrchestrAI/hemello.png", "/OrchestrAI/OrchesterPage.png"],
   },
   {
     id: 3,
@@ -262,8 +262,8 @@ export const demoprojects = [
     { name: "webbrowser", purpose: "Search and YouTube launching" },
   ],
   screenshots: [
-    "/voiceassistant/v1.png",
-    "/voiceassistant/v2.png",
+    "/AIassistant/Aiassistant2.png",
+    "/AIassistant/AIassistant1.png",
   ],
 },
 ];

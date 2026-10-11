@@ -22,24 +22,25 @@ export default function About() {
       transition={{ duration: 0.7 }}
       className="flex justify-center"
     >
-      <div className="relative group w-full max-w-[280px] md:max-w-[420px] aspect-[4/5]" style={{marginBottom:'50px'}}>
-        <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
-        <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
-
-          {aboutData.photoUrl ? (
-            <img
-              src={aboutData.photoUrl}
-              alt="profile"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center text-white/30">
-              <span className="text-6xl">👤</span>
-            </div>
-          )}
-
-        </div>
+     <div
+  className="relative group w-full max-w-[280px] md:max-w-[420px] aspect-[4/5]"
+  style={{ marginBottom: "50px" }}
+>
+  <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
+  <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
+    {aboutData.photoUrl ? (
+      <img
+        src={aboutData.photoUrl}
+        alt="profile"
+        className="absolute inset-0 w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
+      />
+    ) : (
+      <div className="w-full h-full flex items-center justify-center text-white/30">
+        <span className="text-6xl">👤</span>
       </div>
+    )}
+  </div>
+</div>
     </motion.div>
     <motion.div
       initial={{ opacity: 0, x: 30 }}

@@ -119,16 +119,18 @@ export default function ProjectDetail() {
               {project.screenshots?.length > 0 ? (
                 project.screenshots.map((src, i) => (
                   <img
-                    key={i}
-                    src={src}
-                    alt={`${project.title} screenshot ${i + 1}`}
-                    style={{
-                      width: "100%",
-                      borderRadius: 12,
-                      border: "1px solid rgba(168,85,247,0.2)",
-                      objectFit: "cover",
-                    }}
-                  />
+  key={i}
+  src={src}
+  alt={`${project.title} screenshot ${i + 1}`}
+  style={{
+    width: "100%",
+    height: 300,
+    borderRadius: 12,
+    border: "1px solid rgba(168,85,247,0.2)",
+    objectFit: "cover",
+    display: "block",
+  }}
+/>
                 ))
               ) : (
                 <div
