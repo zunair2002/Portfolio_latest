@@ -28,7 +28,7 @@ export const demoprojects = [
     id: 2,
     title: "OrchestrAI",
     status: "Completed",
-    duration: "2 month",
+    duration: "2 months",
     overview:
       "OrchestrAI is a multi-agent AI platform built on LangGraph, Google Gemini, and xAI Grok, with intelligent agent orchestration and dynamic task routing. A Retrieval-Augmented Generation (RAG) pipeline with vector embeddings and Redis caching delivers low-latency, context-aware answers through a scalable Node.js and Express backend.",
     features: [

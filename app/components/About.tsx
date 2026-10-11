@@ -1,76 +1,63 @@
 "use client";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import { aboutData } from "./data";
-import { MapPin } from "lucide-react";
+
+const highlights = [
+  { label: "Focus", value: "Full-Stack + AI" },
+  { label: "Stack", value: "MERN, Next.js, RAG" },
+  { label: "Based in", value: aboutData.location },
+];
 
 export default function About() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-100px" });
-
   return (
-    <section
-  id="about"
-  ref={ref}
-  className="w-full py-12 md:py-20 px-4"
->
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={inView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.7 }}
-      className="flex justify-center"
-    >
-     <div
-  className="relative group w-full max-w-[280px] md:max-w-[420px] aspect-[4/5]"
-  style={{ marginBottom: "50px" }}
->
-  <div className="absolute -inset-3 rounded-2xl border border-purple-500/20 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
-  <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-xl bg-white/5">
-    {aboutData.photoUrl ? (
-      <img
-        src={aboutData.photoUrl}
-        alt="profile"
-        className="absolute inset-0 w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-500"
-      />
-    ) : (
-      <div className="w-full h-full flex items-center justify-center text-white/30">
-        <span className="text-6xl">👤</span>
-      </div>
-    )}
-  </div>
-</div>
-    </motion.div>
-    <motion.div
-      initial={{ opacity: 0, x: 30 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.7, delay: 0.2 }}
-      className="flex flex-col gap-5 text-center md:text-left"
-    >
-      <h2
-  className="text-4xl md:text-6xl font-black tracking-wide"
-  style={{
-    fontFamily: "var(--font-michroma)",
-    color: '#b18cf5',
-  }}
->
-  About Me
-</h2>
+    <section id="about" className="section-block">
+      <div className="page-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
+          <p className="section-kicker">Introduction</p>
+          <h2 className="section-title">About me</h2>
+          <p className="section-copy">
+            I design and ship end-to-end products — from clean interfaces to reliable APIs
+            and intelligent AI features that actually help users.
+          </p>
+        </motion.div>
 
-      <div className="space-y-4 text-red-900 text-white/80 text-sm md:text-base text-[16px] leading-relaxed whitespace-pre-line" style={{fontFamily: "var(--font-inter)"}}>
-        {aboutData.paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
+        <div className="mt-12 grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="surface-card p-6 md:p-8"
+          >
+            <div className="space-y-5 text-[15.5px] leading-7 text-white/72 whitespace-pre-line">
+              {aboutData.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.18 }}
+            className="grid gap-4"
+          >
+            {highlights.map((item) => (
+              <div key={item.label} className="surface-card p-5">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#7dd3c7]">{item.label}</p>
+                <p className="mt-2 text-lg font-medium text-[#f3efe6]">{item.value}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
-<div className="flex justify-center md:justify-start">
-  <div className="inline-flex items-center gap-2 border btnn border-white/20 text-white/80 px-3 py-1.5 rounded-full w-fit"  style={{fontFamily:"var(--font-inter)"}}>
-    <MapPin size={18} />
-    <span className="text-sm">{aboutData.location}</span>
-  </div>
-</div>
-    </motion.div>
-  </div>
-</section>
+    </section>
   );
 }

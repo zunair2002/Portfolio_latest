@@ -1,86 +1,225 @@
-@import url("https://fonts.googleapis.com/css2?family=Windsong:wght@400&display=swap");
 @import "tailwindcss";
 
 :root {
-  --font-windsong: "Windsong", cursive;
+  --bg: #07090e;
+  --fg: #f3efe6;
+  --muted: rgba(243, 239, 230, 0.7);
+  --faint: rgba(243, 239, 230, 0.46);
+  --accent: #7dd3c7;
+  --accent-soft: rgba(125, 211, 199, 0.12);
+  --card: rgba(255, 255, 255, 0.035);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.2);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  /* background: linear-gradient(
-  135deg,
-  #050b2e 0%,
-  #0a1a4d 25%,
-  #0b2f5c 50%,
-  #083a4d 75%,
-  #021b2a 100%
-); */
-  
-    /* background: linear-gradient(
-    135deg,
-    #240051 0%,
-    #290046b3 25%,
-    #220443 50%,
-    #1c0648 75%,
-    #300031a2 100% 
-   ); */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+/* Tailwind preflight already resets margin/padding. Custom rules live in
+   layers so utility classes (mt-*, p-*, gap-*) can still override them. */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  body {
+    font-family: var(--font-geist-sans), var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: rgba(125, 211, 199, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(125, 211, 199, 0.3);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(125, 211, 199, 0.5);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
 }
 
-.navv{
-  padding: 15px 10px;
-  margin-top: 1rem;
-}
-.btnn{
-  padding: 6px 14px;
-}
-.veiw_btn{
-  padding: 12px 24px;
-  margin-top: 60px;
-}
+@layer components {
+  .page-shell {
+    width: 100%;
+    max-width: 1160px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #1a0533;
-}
-::-webkit-scrollbar-thumb {
-  background: #7c3aed;
-  border-radius: 3px;
-}
+  @media (min-width: 768px) {
+    .page-shell {
+      padding-inline: 32px;
+    }
+  }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+  .section-block {
+    width: 100%;
+    padding-block: 80px;
+  }
 
-.marquee-track {
-  animation: marquee 80s linear infinite;
-  display: flex;
-  width: max-content;
-}
+  @media (min-width: 768px) {
+    .section-block {
+      padding-block: 112px;
+    }
+  }
 
-.marquee-track-reverse {
-  animation: marquee 80s linear infinite reverse;
-  display: flex;
-  width: max-content;
-}
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+  }
 
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
+  .section-kicker::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+  }
 
-@keyframes blink {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #a855f7; }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+    color: var(--fg);
+  }
+
+  .section-copy {
+    margin-top: 16px;
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 16.5px;
+    line-height: 1.7;
+  }
+
+  .surface-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    backdrop-filter: blur(16px);
+    transition:
+      border-color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
+  }
+
+  .surface-card:hover {
+    background: var(--card-hover);
+    border-color: var(--border-strong);
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 560;
+    white-space: nowrap;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--fg);
+    color: #111318;
+    border: 1px solid var(--fg);
+  }
+
+  .btn-primary:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--fg);
+    border: 1px solid var(--border-strong);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .icon-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .grid-backdrop {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  }
 }

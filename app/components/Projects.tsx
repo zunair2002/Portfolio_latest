@@ -1,246 +1,193 @@
 "use client";
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { Box, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { demoprojects as caseStudies } from "../demoprojects/data";
+import { GithubIcon } from "./SocialIcons";
 
 const demoprojects = [
   {
     id: 1,
     title: "Ruler.ui",
     description:
-      "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds. Helps developers ship consistent, accessible interfaces faster.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "tsup", "Design System", "Component Library", "ESM/CJS"],
-    githubUrl: "https://ruler-ui.vercel.app/",
+      "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "Design System"],
+    liveUrl: "https://ruler-ui.vercel.app/",
+    githubUrl: "",
   },
   {
     id: 2,
     title: "OrchestrAI",
     description:
-      "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching for fast answers. Lets teams automate complex workflows with context-aware AI.",
-    tags: ["React", "Redux", "Node.js", "Express", "LangChain", "LangGraph", "RAG", "Embeddings", "MongoDB", "Redis", "Gemini", "Grok", "Multi-Agent Systems"],
-    githubUrl: "https://orchestrationai.netlify.app/",
+      "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching.",
+    tags: ["LangGraph", "RAG", "Gemini", "Grok", "Redis", "Node.js"],
+    liveUrl: "https://orchestrationai.netlify.app/",
+    githubUrl: "",
   },
   {
     id: 3,
     title: "RAG System",
     description:
-      "An AI chatbot that gives accurate, context-aware answers using RAG, semantic search, and a Pinecone vector database, built with LangChain and FastAPI. Improves answer relevance and reduces made-up responses.",
-    tags: ["React", "Tailwind CSS", "Node.js", "Express", "FastAPI", "Python", "LangChain", "LangGraph", "Pinecone", "Vector Database", "Semantic Search", "RAG", "LLM"],
+      "An AI chatbot that gives accurate, context-aware answers using RAG, semantic search, and a Pinecone vector database.",
+    tags: ["LangChain", "Pinecone", "FastAPI", "RAG", "React"],
     githubUrl: "https://github.com/zunair2002/RAG-application",
   },
   {
     id: 4,
     title: "SabziMart",
     description:
-      "A full-stack grocery delivery platform for customers, riders, and admins, with real-time order tracking, role-based access, and secure login. Connects the whole delivery process in one reliable system.",
-    tags: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Socket.IO", "Leaflet", "Cloudinary", "NextAuth", "RBAC", "Full-Stack", "Real-Time"],
+      "A full-stack grocery delivery platform for customers, riders, and admins, with real-time tracking and role-based access.",
+    tags: ["Next.js", "MongoDB", "Socket.IO", "NextAuth", "RBAC"],
     githubUrl: "https://github.com/zunair2002/SabziMart",
   },
   {
     id: 5,
     title: "WalletWave",
     description:
-      "A real-time cryptocurrency dashboard that shows live market data and interactive Bitcoin price charts using the CoinGecko API and Chart.js. Makes market trends easy to follow on any device.",
-    tags: ["React", "JavaScript", "CoinGecko API", "REST API", "Chart.js", "Tailwind CSS", "Data Visualization", "Responsive Design"],
+      "A real-time cryptocurrency dashboard with live market data and interactive Bitcoin price charts.",
+    tags: ["React", "Chart.js", "CoinGecko API", "Tailwind CSS"],
     githubUrl: "https://github.com/zunair2002/WalletWave",
   },
   {
     id: 6,
     title: "ChatGO",
     description:
-      "A real-time chat application using Socket.IO and WebSockets for instant messaging, with JWT authentication and MongoDB message storage. Delivers a fast, secure, and responsive conversation experience.",
-    tags: ["React", "Node.js", "Express", "Socket.IO", "WebSockets", "JWT", "Authentication", "MongoDB", "Real-Time", "REST API"],
+      "A real-time chat application using Socket.IO and JWT authentication, with persistent MongoDB message storage.",
+    tags: ["React", "Socket.IO", "JWT", "MongoDB", "Express"],
     githubUrl: "https://github.com/zunair2002/ChatGO",
   },
   {
     id: 7,
     title: "Email Checker",
     description:
-      "An AI-powered phishing detector that uses machine learning and NLP to analyze emails and explain why a message looks safe or suspicious. Helps users spot threats and make safer decisions.",
-    tags: ["React", "Tailwind CSS", "Python", "Machine Learning", "NLP", "Grok AI SDK", "REST API", "Phishing Detection", "Cybersecurity", "Explainable AI"],
+      "An AI-powered phishing detector that uses machine learning and NLP to explain why a message looks safe or suspicious.",
+    tags: ["Python", "NLP", "Machine Learning", "React"],
     githubUrl: "https://github.com/zunair2002/phishing-ML",
   },
   {
     id: 8,
     title: "Expense Tracker",
     description:
-      "A MERN stack finance dashboard that tracks income and expenses and shows spending habits through interactive Recharts visualizations. Helps users manage budgets and build smarter money habits.",
-    tags: ["React", "MongoDB", "Express", "Node.js", "MERN Stack", "Recharts", "Tailwind CSS", "LocalStorage", "REST API", "Data Visualization", "CRUD"],
+      "A MERN finance dashboard that tracks income and expenses and visualizes spending habits.",
+    tags: ["MERN", "Recharts", "MongoDB", "Tailwind CSS"],
     githubUrl: "https://github.com/zunair2002/ExpenseApp-MERN",
   },
   {
-  id: 9,
-  title: "AI Voice Assistant",
-  description:
-    "A Python desktop voice assistant that recognizes spoken commands and responds with text-to-speech, enabling hands-free web searches, music playback, time queries, and everyday task automation.",
-  tags: ["Python", "Tkinter", "Speech Recognition", "Google Speech API", "pyttsx3", "Text-to-Speech", "PyAudio", "Desktop App", "Voice Commands"],
-  githubUrl: "YOUR_VOICE_ASSISTANT_GITHUB_URL",
-},
+    id: 9,
+    title: "AI Voice Assistant",
+    description:
+      "A Python desktop voice assistant that recognizes spoken commands and responds with text-to-speech.",
+    tags: ["Python", "Speech Recognition", "Tkinter", "pyttsx3"],
+    githubUrl: "",
+  },
 ];
 
-export default function Projects() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-10px" });
+const coverFor = (id: number) => caseStudies.find((p) => p.id === id)?.screenshots?.[0];
+
+type Project = (typeof demoprojects)[number] & { liveUrl?: string };
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const cover = coverFor(project.id);
+  const externalUrl = project.liveUrl || project.githubUrl;
 
   return (
-   <section id="projects" ref={ref} className="w-full py-8 md:py-16">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={inView ? { opacity: 1, y: 0 } : {}}
-    transition={{ duration: 0.6 }}
-    style={{ textAlign: "center", marginBottom: 60 }}
-  >
-    <h2
-      className="text-3xl md:text-6xl font-black"
-      style={{
-        fontFamily: "var(--font-michroma)",
-        color: "#b18cf5",
-      }}
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, delay: (index % 3) * 0.06 }}
+      className="surface-card group flex h-full flex-col overflow-hidden"
     >
-      My Projects
-    </h2>
-  </motion.div>
-
-<div className="max-w-6xl mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">    {demoprojects.map((project, i) => (
-      <motion.div
-        key={project.id}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: i * 0.12 }}
-        whileHover={{ y: -6, transition: { duration: 0.2 } }}
-        style={{
-          border: "1px solid rgba(255, 255, 255, 0.56)",
-          borderRadius: 14,
-          padding: "18px 16px",
-          display: "flex",
-          flexDirection: "column",
-          gap: 12,
-          cursor: "default",
-          background: "rgba(255, 255, 255, 0.03)",
-          backdropFilter: "blur(10px)",
-          margin:"5px",
-          minHeight: "430px",
-        }}
+      <Link
+        href={`/demoprojects/${project.id}`}
+        className="relative block aspect-[16/10] overflow-hidden border-b border-white/8 bg-white/[0.03]"
       >
-        <div>
-          <h3
-            style={{
-              fontFamily: "var(--font-michroma)",
-              fontSize: "clamp(1rem, 2vw, 1.3rem)",
-              fontWeight: 700,
-              color: "#e2d9f3",
-              marginTop: 0,
-              marginBottom: 10,
-            }}
-          >
-            {project.title}
-          </h3>
+        {cover ? (
+          <img
+            src={cover}
+            alt={`${project.title} preview`}
+            loading="lazy"
+            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center text-sm text-white/30">{project.title}</div>
+        )}
+        <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 font-mono text-[11px] text-white/80 backdrop-blur">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+      </Link>
 
-          <p
-            className="leading-relaxed whitespace-pre-line"
-            style={{
-              fontSize: "clamp(0.8rem, 1.2vw, 0.93rem)",
-              lineHeight: 1.7,
-              color: "rgba(255,255,255,0.72)",
-              fontFamily: "var(--font-inter)",
-              // Keep every card's description and tag sections visually aligned.
-              height: "10.2em",
-              margin: 0,
-              overflow: "hidden",
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 6,
-            }}
-          >
-            {project.description}
-          </p>
-        </div>
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="text-xl font-semibold tracking-tight text-[#f3efe6]">
+          {project.title}
+        </h3>
+        <p className="mt-3 flex-1 text-[14.5px] leading-7 text-white/65">{project.description}</p>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 6,
-            minHeight: "116px",
-            alignContent: "flex-start",
-          }}
-        >
-          {project.tags.map((tag, j) => (
-            <span
-              key={j}
-              style={{
-                padding: "3px 10px",
-                border: "1px solid #48474a",
-                background: "rgba(255, 255, 255, 0.05)",
-                borderRadius: 4,
-                fontSize: 11,
-                fontFamily: "var(--font-inter)",
-                color: "rgb(255, 255, 255)",
-              }}
-            >
+        <div className="mt-5 flex flex-wrap gap-2">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span key={tag} className="chip">
               {tag}
             </span>
           ))}
         </div>
 
-        <div style={{ display: "flex", gap: 10, marginTop: "auto" }}>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 7,
-              padding: "8px 0",
-              background: "rgba(255, 255, 255, 0.12)",
-              borderRadius: 8,
-              color: "#ffffff",
-              fontSize: 12,
-              textDecoration: "none",
-              fontWeight: 500,
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-            }}
-          >
-            <Box size={15} /> Code
-          </a>
-
+        <div className="mt-6 flex items-center justify-between gap-3 border-t border-white/8 pt-5">
           <Link
             href={`/demoprojects/${project.id}`}
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 7,
-              padding: "8px 0",
-              background: "#ffffff",
-              border: "1px solid rgba(0,0,0,0.08)",
-              borderRadius: 8,
-              color: "#000000",
-              fontSize: 12,
-              textDecoration: "none",
-              fontWeight: 500,
-              transition: "opacity 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = "0.85";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = "1";
-            }}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#f3efe6] transition-colors hover:text-[#7dd3c7]"
           >
-            <ExternalLink size={15} /> Demo
+            View case study
+            <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </Link>
+          {externalUrl ? (
+            <a
+              href={externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-white/55 transition-colors hover:text-[#7dd3c7]"
+            >
+              {project.liveUrl ? (
+                <>
+                  Live demo <ArrowUpRight size={14} />
+                </>
+              ) : (
+                <>
+                  <GithubIcon size={14} /> Source
+                </>
+              )}
+            </a>
+          ) : null}
         </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
+      </div>
+    </motion.article>
+  );
+}
+
+export default function Projects() {
+  return (
+    <section id="projects" className="section-block">
+      <div className="page-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
+          <p className="section-kicker">Selected work</p>
+          <h2 className="section-title">Projects</h2>
+          <p className="section-copy">
+            AI systems, full-stack products, and interface libraries, each with a short case
+            study covering features and architecture.
+          </p>
+        </motion.div>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {(demoprojects as Project[]).map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

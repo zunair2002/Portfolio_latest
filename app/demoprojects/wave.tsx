@@ -42,12 +42,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     c /= float(MAX_ITER);
     c = 1.17 - pow(c, 1.4);
 
-    // Invert c so waves are dark instead of bright
-    vec3 colour = vec3(pow(abs(c), 10.0));
+    vec3 colour = vec3(pow(abs(c), 9.0));
 
-    // Darker green tones
-    colour = clamp(colour * vec3(0.0, 0.18, 0.06), 0.0, 1.0);   // crush to very dark green
-    colour = mix(colour, vec3(0.01, 0.12, 0.05), 0.60);          // deep dark green blend
+    colour = clamp(colour * vec3(0.16, 0.28, 0.48), 0.0, 1.0);
+    colour = mix(colour, vec3(0.05, 0.08, 0.14), 0.55);
 
     fragColor = vec4(colour, 1.0);
 }

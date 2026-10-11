@@ -1,70 +1,69 @@
 "use client";
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { skillsRow1, skillsRow2, skillsRow3, skillsRow4 } from "./data";
 
-function SkillItem({ name, icon }: { name: string; icon?: string }) {
-  return (
-    <div style={{
-      display: "flex", alignItems: "center", gap: 10,
-      padding: "10px 20px", marginRight: 40,
-      whiteSpace: "nowrap"
-    }}>
-      {icon ? (
-        <img src={icon} alt={name} style={{ width: 24, height: 24, objectFit: "contain" }} onError={e => { (e.target as HTMLImageElement).style.display = "none" }} />
-      ) : (
-        <div style={{ width: 22, height: 22, borderRadius: 4, background: "rgba(168,85,247,0.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10 }}>⚡</div>
-      )}
-      <span style={{ fontSize: 15, color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>{name}</span>
-    </div>
-  );
-}
+const groups = [
+  { title: "Languages & Databases", items: skillsRow1 },
+  { title: "Frontend & Backend", items: skillsRow2 },
+  { title: "Tools & Platforms", items: skillsRow3 },
+  { title: "Practices", items: skillsRow4 },
+];
 
-function MarqueeRow({ items, reverse = false }: { items: { name: string; icon?: string }[]; reverse?: boolean }) {
-  const doubled = [...items, ...items];
-  return (
-    <div style={{ overflow: "hidden", width: "100%", marginBottom: 12 }}>
-      <div className={reverse ? "marquee-track-reverse" : "marquee-track"}>
-        {doubled.map((skill, i) => (
-          <SkillItem key={i} name={skill.name} icon={(skill as { icon?: string }).icon} />
-        ))}
-      </div>
-    </div>
-  );
-}
 export default function Skills() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-80px" });
-
   return (
-    <section id="skills" ref={ref} className="w-full py-12 md:py-16 overflow-hidden">
-      <motion.h2
-  initial={{ opacity: 0, y: 20 }}
-  animate={inView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.6 }}
-  className="text-4xl md:text-6xl font-black text-center"
-  style={{
-    fontFamily: "var(--font-michroma)",
-    color: '#b18cf5',
-    marginBottom: '52px',
-  }}
->
-  My Skills
-</motion.h2>
-
-      <div className="flex justify-center items-center w-full">
+    <section id="skills" className="section-block">
+      <div className="page-shell">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full py-12 rounded-3xl backdrop-blur-sm"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
         >
-          <MarqueeRow items={skillsRow1} />
-          <MarqueeRow items={skillsRow2} reverse />
-          <MarqueeRow items={skillsRow3} />
-          <MarqueeRow items={skillsRow4} reverse />
+          <p className="section-kicker">Capabilities</p>
+          <h2 className="section-title">Skills</h2>
+          <p className="section-copy">
+            The tools I use to design, build, and ship reliable web products and AI features.
+          </p>
         </motion.div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {groups.map((group, i) => (
+            <motion.div
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="surface-card p-6"
+            >
+              <h3 className="mb-4 text-sm uppercase tracking-[0.16em] text-[#7dd3c7]">
+                {group.title}
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                {group.items.map((skill) => (
+                  <span
+                    key={skill.name}
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/80"
+                  >
+                    {"icon" in skill && typeof skill.icon === "string" ? (
+                      <img
+                        src={skill.icon}
+                        alt=""
+                        className={`h-4 w-4 object-contain ${
+                          ["GitHub", "Next.js", "Express.js", "Vercel"].includes(skill.name)
+                            ? "invert"
+                            : ""
+                        }`}
+                      />
+                    ) : null}
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

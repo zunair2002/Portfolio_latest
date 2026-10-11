@@ -1,20 +1,31 @@
 export const heroData = {
   name: "Zunair Shahid",
   title: "FullStack AI Engineer",
-  description:"I am a developer who enjoys building intuitive web applications and exploring emerging technologies. I focus on turning ideas into practical and user-friendly digital solutions",
+  description:
+    "I build intuitive web products and practical AI systems — turning ideas into reliable, user-friendly software.",
   resumeUrl: "/cv/ZunairShahid_CV (1).pdf",
+  portrait: "/Myself/portrait.jpeg",
+  location: "Lahore, Pakistan",
+  stats: [
+    { value: "9+", label: "Projects shipped" },
+    { value: "6", label: "Certifications" },
+    { value: "25+", label: "UI components open-sourced" },
+  ],
+};
+
+export const contactData = {
+  email: "zunairshahid02@gmail.com",
+  github: "https://github.com/zunair2002",
+  linkedin: "https://www.linkedin.com/in/zunair-shahid-1ab94327a/",
 };
 
 export const aboutData = {
   paragraphs: [
-   `I am a Full Stack Developer with experience building end-to-end web applications using MongoDB, Express.js, React, and Node.js. I focus on creating scalable, maintainable, and high-performance solutions with smooth integration between frontend and backend systems.
-
-On the frontend, I build responsive and user-friendly interfaces using React. On the backend, I develop secure and efficient RESTful APIs using Node.js and Express.js. I work with MongoDB for effective data modeling and management to ensure reliable application performance.
-
-I also have experience with modern AI and data-driven technologies including Retrieval-Augmented Generation (RAG), LangChain, LangGraph, NumPy, and OpenCV, which help me integrate intelligent features like automation, natural language processing, and computer vision into web applications, while continuously improving and building impactful, efficient digital solutions.`
+    "I am a full-stack developer who builds end-to-end web applications with MongoDB, Express.js, React, and Node.js. My work focuses on scalable architecture, clean APIs, and interfaces that stay fast and easy to use.",
+    "On the frontend I design responsive React experiences. On the backend I build secure REST APIs, model data in MongoDB, and ship features that hold up in production.",
+    "I also work with RAG, LangChain, LangGraph, and related AI tooling to add grounded search, automation, and intelligent workflows into real products.",
   ],
   location: "Lahore, Pakistan",
-  photoUrl: "/Myself/WhatsApp Image 2026-10-11 at 2.42.24 PM.jpeg",
 };
 
 export const skillsRow1 = [
@@ -139,28 +150,6 @@ export const skillsRow4 = [
 
 export const experienceData = [
   {
-    role: "Full-Stack Engineering (Freelance)",
-    company: "Fiverr, Remote",
-    period: "Nov 2025 - Dec 2025",
-    points: [
-      "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
-      "Developed a real-time client reporting tool with automated CSV and PDF exports and third-party API integrations, eliminating manual reporting processes.",
-      "Designed custom KiCad-based design automation software to streamline engineering workflows and automate engineering data export.",
-    ],
-    tags: [
-      "Next.js",
-      "SSR",
-      "Tailwind CSS",
-      "SEO",
-      "Core Web Vitals",
-      "REST APIs",
-      "Third-Party API Integration",
-      "CSV/PDF Export",
-      "KiCad",
-      "Design Automation",
-    ],
-  },
-  {
     role: "Full-Stack Engineer (MERN Stack)",
     company: "Self-Directed",
     period: "Jan 2025 - Present",
@@ -203,6 +192,27 @@ export const experienceData = [
       "Interoperability",
       "Research",
     ],
-  },
-];
 
+  },
+  {
+    role: "Full-Stack Engineering (Freelance)",
+    company: "Fiverr, Remote",
+    period: "Nov 2025 - Dec 2025",
+    points: [
+      "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
+      "Developed a real-time client reporting tool with automated CSV and PDF exports and third-party API integrations, eliminating manual reporting processes.",
+      "Designed custom KiCad-based design automation software to streamline engineering workflows and automate engineering data export.",
+    ],
+    tags: [
+      "Next.js",
+      "SSR",
+      "Tailwind CSS",
+      "SEO",
+      "Core Web Vitals",
+      "REST APIs",
+      "Third-Party API Integration",
+      "CSV/PDF Export",
+      "KiCad",
+      "Design Automation",
+    ],  },
+];
