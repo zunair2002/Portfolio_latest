@@ -82,7 +82,7 @@ const demoprojects = [
   },
 ];
 
-const coverFor = (id: number) => caseStudies.find((p) => p.id === id)?.screenshots?.[0];
+const coverFor = (id: number) => caseStudies.find((p) => p.id === id)?.coverImage;
 
 type Project = (typeof demoprojects)[number] & { liveUrl?: string };
 
@@ -100,17 +100,19 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <Link
         href={`/demoprojects/${project.id}`}
-        className="relative block aspect-[16/10] overflow-hidden border-b border-white/8 bg-white/[0.03]"
+        className="relative block border-b border-white/8"
       >
         {cover ? (
           <img
             src={cover}
             alt={`${project.title} preview`}
             loading="lazy"
-            className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            className="block h-[180px] w-full"
           />
         ) : (
-          <div className="flex h-full items-center justify-center text-sm text-white/30">{project.title}</div>
+          <div className="flex aspect-[16/10] items-center justify-center text-sm text-white/30">
+            {project.title}
+          </div>
         )}
         <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 font-mono text-[11px] text-white/80 backdrop-blur">
           {String(index + 1).padStart(2, "0")}

@@ -59,7 +59,7 @@ export default function ProjectDetail() {
                     key={src}
                     src={src}
                     alt={`${project.title} screenshot ${i + 1}`}
-                    className="h-[280px] w-full rounded-2xl border border-white/10 object-cover"
+                    className="h-[280px] w-full rounded-2xl border border-white/10 object-contain"
                   />
                 ))
               ) : (

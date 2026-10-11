@@ -22,7 +22,8 @@ export const demoprojects = [
       { name: "CVA", purpose: "Variant-based component styling" },
       { name: "tsup", purpose: "ESM/CJS bundling and tree-shaking" },
     ],
-    screenshots: ["/Rulerui/ruler1.png", "/Rulerui/ruler2.png", "/Rulerui/ruler3.png", "/Rulerui/ruler4.png"],
+    coverImage: "/Rulerui/ruler5.png",
+    screenshots: ["/Rulerui/ruler6.png", "/Rulerui/ruler2.png", "/Rulerui/ruler3.png", "/Rulerui/ruler4.png"],
   },
   {
     id: 2,
@@ -51,7 +52,8 @@ export const demoprojects = [
       { name: "MongoDB", purpose: "Persistent data storage" },
       { name: "Redis", purpose: "High-speed response caching" },
     ],
-    screenshots: ["/OrchestrAI/hemello.png", "/OrchestrAI/OrchesterPage.png"],
+    coverImage: "/OrchestrAI/orchestr3.png",
+    screenshots: ["/OrchestrAI/OrchesterPage.png"],
   },
   {
     id: 3,
@@ -78,6 +80,7 @@ export const demoprojects = [
       { name: "Pinecone", purpose: "Vector database" },
       { name: "LLM", purpose: "Response generation" },
     ],
+    coverImage: "/Rag/rag4.png",
     screenshots: ["/Rag/RAGpic.png", "/Rag/RAGpic2.png"],
   },
   {
@@ -106,8 +109,8 @@ export const demoprojects = [
       { name: "Leaflet", purpose: "Live map tracking" },
       { name: "Cloudinary", purpose: "Cloud image storage and delivery" },
     ],
+    coverImage: "/sabzimart/Screenshot 2026-04-23 102633.png",
     screenshots: [
-      "/sabzimart/Screenshot 2026-04-23 102633.png",
       "/sabzimart/Screenshot 2026-04-23 102714.png",
       "/sabzimart/Screenshot 2026-04-23 103001.png",
       "/sabzimart/Screenshot 2026-04-23 102748.png",
@@ -138,8 +141,8 @@ export const demoprojects = [
       { name: "Chart.js", purpose: "Interactive data visualization" },
       { name: "Tailwind CSS", purpose: "Responsive styling" },
     ],
+    coverImage: "/walletwave/a1.png",
     screenshots: [
-      "/walletwave/a1.png",
       "/walletwave/a2.png",
       "/walletwave/a3.png",
       "/walletwave/a4.png",
@@ -167,6 +170,7 @@ export const demoprojects = [
       { name: "JWT", purpose: "Authentication and authorization" },
       { name: "MongoDB", purpose: "Persistent message storage" },
     ],
+    coverImage: "/chatgo/chat.png",
     screenshots: [
       "/chatgo/chat2.png",
       "/chatgo/ch3.png",
@@ -199,10 +203,8 @@ export const demoprojects = [
       { name: "Grok AI SDK", purpose: "Explainable predictions" },
       { name: "REST API", purpose: "Frontend-backend communication" },
     ],
-    screenshots: [
-      "/emailchecker/emailchcher2.png",
-      "/emailchecker/emailchecker.png",
-    ],
+    coverImage: "/emailchecker/emailchcher2.png",
+    screenshots: ["/emailchecker/emailchecker.png"],
   },
   {
     id: 8,
@@ -227,8 +229,8 @@ export const demoprojects = [
       { name: "LocalStorage", purpose: "Client-side state caching" },
       { name: "Tailwind CSS", purpose: "Responsive styling" },
     ],
+    coverImage: "/expensetracker/e1.png",
     screenshots: [
-      "/expensetracker/e1.png",
       "/expensetracker/e2.png",
       "/expensetracker/e3.png",
       "/expensetracker/e4.png",
@@ -261,9 +263,7 @@ export const demoprojects = [
     { name: "PyAudio", purpose: "Microphone audio capture" },
     { name: "webbrowser", purpose: "Search and YouTube launching" },
   ],
-  screenshots: [
-    "/AIassistant/Aiassistant2.png",
-    "/AIassistant/AIassistant1.png",
-  ],
+  coverImage: "/AIassistant/Aiassistant2.png",
+  screenshots: ["/AIassistant/AIassistant1.png"],
 },
 ];
