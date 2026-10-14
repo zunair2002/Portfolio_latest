@@ -1,20 +1,31 @@
 export const heroData = {
   name: "Zunair Shahid",
-  title: "FullStack AI Engineer",
-  description:"I am a developer who enjoys building intuitive web applications and exploring emerging technologies. I focus on turning ideas into practical and user-friendly digital solutions",
+  title: "FullStack Engineer",
+  description:
+    "Full-Stack Engineer building scalable web applications and practical AI solutions with a focus on clean architecture, secure systems & real-world impact.",
   resumeUrl: "/cv/ZunairShahid_CV (1).pdf",
+  portrait: "/Myself/portrait.jpeg",
+  location: "Lahore, Pakistan",
+  stats: [
+    { value: "9+", label: "Projects shipped" },
+    { value: "6", label: "Certifications" },
+    { value: "25+", label: "Open-source components" },
+  ],
+};
+
+export const contactData = {
+  email: "zunairshahid02@gmail.com",
+  github: "https://github.com/zunair2002",
+  linkedin: "https://www.linkedin.com/in/zunair-shahid-1ab94327a/",
 };
 
 export const aboutData = {
-  paragraphs: [
-   `I am a Full Stack Developer with experience building end-to-end web applications using MongoDB, Express.js, React, and Node.js. I focus on creating scalable, maintainable, and high-performance solutions with smooth integration between frontend and backend systems.
-
-On the frontend, I build responsive and user-friendly interfaces using React. On the backend, I develop secure and efficient RESTful APIs using Node.js and Express.js. I work with MongoDB for effective data modeling and management to ensure reliable application performance.
-
-I also have experience with modern AI and data-driven technologies including Retrieval-Augmented Generation (RAG), LangChain, LangGraph, NumPy, and OpenCV, which help me integrate intelligent features like automation, natural language processing, and computer vision into web applications, while continuously improving and building impactful, efficient digital solutions.`
-  ],
+ paragraphs: [
+"I build end-to-end web applications using MongoDB, Express.js, React, and Node.js, with an emphasis on scalable architecture, maintainable code, and seamless user experiences.",
+"I develop responsive frontend interfaces and secure backend services, designing RESTful APIs, structured data models, and reliable features built for real-world use.",
+"I also build AI-powered solutions using RAG, LangChain, and LangGraph, integrating contextual retrieval, intelligent automation, and multi-agent workflows into practical applications.",
+],
   location: "Lahore, Pakistan",
-  photoUrl: "/Myself/WhatsApp Image 2026-10-11 at 2.42.24 PM.jpeg",
 };
 
 export const skillsRow1 = [
@@ -139,13 +150,40 @@ export const skillsRow4 = [
 
 export const experienceData = [
   {
-    role: "Full-Stack Engineering (Freelance)",
-    company: "Fiverr, Remote",
+    role: "Frontend Engineer (Part-Time - Remote)",
+    company: "CalaraVision",
+    period: "Jun 2026 - Present",
+    points: [
+      "Built 5+ responsive modules using React.js, TypeScript, React Hooks, Context API and Redux Toolkit in an Agile team of 4 engineers.",
+      "Integrated RESTful APIs with PostgreSQL-backed services, implementing JWT authentication and Role-Based Access Control (RBAC) to secure user data.",
+      "Built responsive, cross-browser compatible UIs using Tailwind CSS, HTML5 and reusable components for maintainability.",
+      "Maintained code quality through Git/GitHub workflows, peer code reviews, unit testing, debugging and CI/CD pipelines.",
+    ],
+    tags: [
+      "React.js",
+      "TypeScript",
+      "React Hooks",
+      "Context API",
+      "Redux Toolkit",
+      "RESTful APIs",
+      "PostgreSQL",
+      "JWT",
+      "RBAC",
+      "Tailwind CSS",
+      "HTML5",
+      "Git/GitHub",
+      "CI/CD",
+      "Agile",
+    ],
+  },
+  {
+    role: "Freelance Full-Stack Engineer (Freelance - Remote)",
+    company: "Fiverr",
     period: "Nov 2025 - Dec 2025",
     points: [
       "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
-      "Developed a real-time client reporting tool with automated CSV and PDF exports and third-party API integrations, eliminating manual reporting processes.",
-      "Designed custom KiCad-based design automation software to streamline engineering workflows and automate engineering data export.",
+      "Built a real-time reporting tool (Socket.IO) with automated CSV/PDF exports and third-party API integrations.",
+      "Designed KiCad-based design automation software to streamline engineering workflows and automate data export.",
     ],
     tags: [
       "Next.js",
@@ -153,11 +191,30 @@ export const experienceData = [
       "Tailwind CSS",
       "SEO",
       "Core Web Vitals",
-      "REST APIs",
+      "Socket.IO",
       "Third-Party API Integration",
       "CSV/PDF Export",
       "KiCad",
       "Design Automation",
+    ],
+  },
+  {
+    role: "Research Intern, Blockchain Security",
+    company: "Bahria University",
+    period: "Jan 2026 - Feb 2026",
+    points: [
+      "Researched post-quantum cryptography to strengthen blockchain security against quantum computing threats.",
+      "Evaluated quantum-resilient blockchain architectures and consensus mechanisms for security, scalability and interoperability.",
+    ],
+    tags: [
+      "Blockchain",
+      "Post-Quantum Cryptography",
+      "Quantum Computing",
+      "Consensus Mechanisms",
+      "Security",
+      "Scalability",
+      "Interoperability",
+      "Research",
     ],
   },
   {
@@ -185,24 +242,4 @@ export const experienceData = [
       "Agile",
     ],
   },
-  {
-    role: "Research Intern, Blockchain & Quantum Computing",
-    company: "Bahria University",
-    period: "Jan 2026 - Feb 2026",
-    points: [
-      "Researched post-quantum cryptographic techniques and algorithms to strengthen blockchain security against emerging quantum computing threats.",
-      "Evaluated quantum-resilient blockchain architectures and consensus mechanisms to improve security, scalability and interoperability.",
-    ],
-    tags: [
-      "Blockchain",
-      "Quantum Computing",
-      "Post-Quantum Cryptography",
-      "Consensus Mechanisms",
-      "Security",
-      "Scalability",
-      "Interoperability",
-      "Research",
-    ],
-  },
 ];
-

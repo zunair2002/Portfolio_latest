@@ -42,12 +42,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     c /= float(MAX_ITER);
     c = 1.17 - pow(c, 1.4);
 
-    // Invert c so waves are dark instead of bright
-    vec3 colour = vec3(pow(abs(c), 10.0));
+    vec3 colour = vec3(pow(abs(c), 9.0));
 
-    // Darker green tones
-    colour = clamp(colour * vec3(0.0, 0.18, 0.06), 0.0, 1.0);   // crush to very dark green
-    colour = mix(colour, vec3(0.01, 0.12, 0.05), 0.60);          // deep dark green blend
+    colour = clamp(colour * vec3(0.16, 0.28, 0.48), 0.0, 1.0);
+    colour = mix(colour, vec3(0.05, 0.08, 0.14), 0.55);
+    float wave = smoothstep(0.09, 0.35, length(colour)) * 0.32;
+    colour = mix(vec3(0.969, 0.965, 0.949), vec3(0.82, 0.96, 0.87), wave);
 
     fragColor = vec4(colour, 1.0);
 }
@@ -141,9 +141,11 @@ function ReflectBackground({
     const render = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      canvas.width = width;
-      canvas.height = height;
-      gl.viewport(0, 0, width, height);
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+        gl.viewport(0, 0, width, height);
+      }
 
       const currentTime = (Date.now() - startTime) / 1000;
 

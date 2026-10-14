@@ -1,223 +1,107 @@
 "use client";
-import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { Briefcase, Check } from "lucide-react";
 import { experienceData } from "./data";
 
 export default function Experience() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-80px" });
-
   return (
-    <section id="experience" ref={ref} className="w-full py-6 md:py-10">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-        style={{ textAlign: "center", marginBottom: "clamp(20px, 4vw, 50px)" }}
-      >
-        <h2
-          className="text-4xl md:text-6xl font-black"
-          style={{
-            fontFamily: "var(--font-michroma)", 
-            color: '#b18cf5',
-          }}
+    <section id="experience" className="section-block">
+      <div className="page-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
         >
-          Experience
-        </h2>
-        <p
-          style={{
-            fontFamily: "var(--font-inter)",
-            color: "white",
-            marginTop: "30px",
-          }}
-        >
-          My professional journey and key experiences
-        </p>
-      </motion.div>
-      <div className="w-full relative" style={{ paddingRight: "5px" }}>
-        <div
-          style={{
-            position: "absolute",
-            left: "19px",
-            top: "48px",
-            bottom: "48px",
-            width: "1px",
-            background:
-              "linear-gradient(to bottom, transparent, rgba(255,255,255,0.25) 8%, rgba(255,255,255,0.25) 92%, transparent)",
-            zIndex: 0,
-          }}
-        />
+          <p className="section-kicker">02 — Experience</p>
+          <h2 className="section-title">
+            My <span className="serif-accent">journey</span> so far
+          </h2>
+          <p className="section-copy">
+            Product engineering, client delivery, and applied research.
+          </p>
+        </motion.div>
 
-        {experienceData.map((exp, i) => (
+        <div className="relative mt-14 space-y-8 md:space-y-10">
           <div
-            key={i}
-            style={{
-              position: "relative",
-              paddingLeft: "clamp(42px, 5vw, 58px)",
-              marginBottom: "clamp(12px, 2vw, 24px)",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                left: "10px",
-                top: "30px",
-                width: "18px",
-                height: "18px",
-                borderRadius: "50%",
-                background: "#b18cf5",
-                border: "4px solid #000",
-                boxShadow: "0 0 0 2px #b18cf5",
-                zIndex: 2,
-              }}
-            />
+            aria-hidden="true"
+            className="absolute bottom-4 left-[7px] top-3 w-px bg-gradient-to-b from-[#32de84] via-[#101051]/20 to-transparent md:left-[224px]"
+          />
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              style={{
-                background: "rgba(255, 255, 255, 0.03)",
-                backdropFilter: "blur(10px)",
-                border: "1px solid rgba(255, 255, 255, 0.5)",
-                borderRadius: "18px",
-                padding: "clamp(10px, 2.5vw, 28px)",
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "400px",
-                  height: "400px",
-                  filter: "blur(60px)",
-                  zIndex: -1,
-                }}
-              />
-
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  flexWrap: "wrap",
-                  gap: "6px",
-                  marginBottom: "4px",
-                }}
+          {experienceData.map((exp, i) => {
+            const current = /present/i.test(exp.period);
+            return (
+              <motion.article
+                key={`${exp.role}-${exp.period}`}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="relative grid gap-4 pl-9 md:grid-cols-[200px_1fr] md:gap-0 md:pl-0"
               >
-                <h3
-                  style={{
-                    fontSize: "clamp(0.8rem, 1.8vw, 1.3rem)",
-                    fontWeight: "700",
-                    color: "#ffffff",
-                    letterSpacing: "-0.01em",
-                    fontFamily: "var(--font-michroma)",
-                    marginBottom: "20px",
-                  }}
-                >
-                  {exp.role}
-                </h3>
-
+                {/* Timeline node */}
                 <span
-                  style={{
-                    fontSize: "clamp(0.75rem, 1.5vw, 1rem)",
-                    color: "rgba(255, 255, 255, 0.84)",
-                    whiteSpace: "nowrap",
-                    fontFamily: "var(--font-inter)",
-                  }}
+                  aria-hidden="true"
+                  className="absolute left-0 top-1 flex h-[15px] w-[15px] items-center justify-center md:left-[217px] md:top-9"
                 >
-                  {exp.period}
-                </span>
-              </div>
-
-              <p
-                style={{
-                  color: "#b18cf5",
-                  fontSize: "clamp(0.85rem, 1.5vw, 1.1rem)",
-                  marginBottom: "clamp(10px, 2vw, 20px)",
-                  fontWeight: "500",
-                  fontFamily: "var(--font-inter)",
-                }}
-              >
-                {exp.company}
-              </p>
-
-              <ul
-                style={{
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0,
-                  marginBottom: "clamp(12px, 2vw, 24px)",
-                }}
-              >
-                {exp.points.map((pt, j) => (
-                  <li
-                    key={j}
-                    style={{
-                      display: "flex",
-                      gap: "10px",
-                      marginBottom: "clamp(6px, 1vw, 12px)",
-                      alignItems: "flex-start",
-                    }}
-                  >
-                    <div
-                      style={{
-                        marginTop: "6px",
-                        flexShrink: 0,
-                        width: "10px",
-                        height: "10px",
-                        borderRadius: "50%",
-                        background: "#b18cf5",
-                        border: "2px solid #000",
-                        boxShadow: "0 0 0 1px #b18cf5",
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontSize: "clamp(0.8rem, 1.5vw, 0.95rem)",
-                        lineHeight: "1.5",
-                        color: "rgba(255, 255, 255, 0.8)",
-                        fontFamily: "var(--font-inter)",
-                      }}
-                    >
-                      {pt}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "clamp(5px, 1vw, 10px)",
-                }}
-              >
-                {exp.tags.map((tag, j) => (
+                  {current && (
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#32de84] opacity-60" />
+                  )}
                   <span
-                    key={j}
-                    style={{
-                    padding: "4px 12px",
-                    border: "1px solid rgba(168,85,247,0.4)",
-                    background: "rgba(255, 255, 255, 0.05)",
-                    borderRadius: 4,
-                    fontSize: 12,
-                    fontFamily: "var(--font-inter)",
-                    color: "rgb(255, 255, 255)",
-                  }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        ))}
+                    className={`relative h-[15px] w-[15px] rounded-full border-[3px] ${
+                      current ? "border-[#32de84] bg-[#101051]" : "border-[#32de84] bg-[#F7F6F2]"
+                    }`}
+                  />
+                </span>
+
+                {/* Meta */}
+                <div className="md:pr-10 md:pt-7 md:text-right">
+                  <p className="font-mono text-[12.5px] font-medium text-[#101051]">{exp.period}</p>
+                  <p className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-[#16884e] md:justify-end">
+                    {exp.company}
+                  </p>
+                  {current && (
+                    <p className="mt-3 md:flex md:justify-end">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#32de84]/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#16884e]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#32de84]" />
+                        Current
+                      </span>
+                    </p>
+                  )}
+                </div>
+
+                {/* Card */}
+                <div className="md:pl-12">
+                  <div className="surface-card card-lift p-6 md:p-8">
+                    <h3 className="text-xl font-semibold tracking-tight text-[#101051] md:text-[1.35rem]">
+                      {exp.role}
+                    </h3>
+
+                    <ul className="mt-5 space-y-3">
+                      {exp.points.map((pt) => (
+                        <li key={pt} className="flex gap-3 text-[15px] leading-7 text-neutral-600">
+                          <span className="mt-[5px] flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full bg-[#32de84]/20 text-[#16884e]">
+                            <Check size={11} strokeWidth={3} />
+                          </span>
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {exp.tags.slice(0, 8).map((tag) => (
+                        <span key={tag} className="chip">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

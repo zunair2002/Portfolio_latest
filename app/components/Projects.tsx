@@ -1,246 +1,297 @@
 "use client";
-import { useRef } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { Box, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { demoprojects as caseStudies } from "../demoprojects/data";
+import { GithubIcon } from "./SocialIcons";
 
-const demoprojects = [
+type Category = "AI & LLM" | "Full-Stack" | "Frontend";
+
+const demoprojects: {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  category: Category;
+  liveUrl?: string;
+  githubUrl: string;
+}[] = [
   {
     id: 1,
     title: "Ruler.ui",
     description:
-      "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds. Helps developers ship consistent, accessible interfaces faster.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "tsup", "Design System", "Component Library", "ESM/CJS"],
-    githubUrl: "https://ruler-ui.vercel.app/",
+      "An open-source React and TypeScript component library with 25+ reusable UI components, dark and light themes, and optimized ESM/CJS builds.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS", "CVA", "Design System"],
+    category: "Frontend",
+    liveUrl: "https://ruler-ui.vercel.app/",
+    githubUrl: "",
   },
   {
     id: 2,
     title: "OrchestrAI",
     description:
-      "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching for fast answers. Lets teams automate complex workflows with context-aware AI.",
-    tags: ["React", "Redux", "Node.js", "Express", "LangChain", "LangGraph", "RAG", "Embeddings", "MongoDB", "Redis", "Gemini", "Grok", "Multi-Agent Systems"],
-    githubUrl: "https://orchestrationai.netlify.app/",
+      "A multi-agent AI platform using LangGraph, Gemini, and Grok to route tasks intelligently, with a RAG pipeline and Redis caching.",
+    tags: ["LangGraph", "RAG", "Gemini", "Grok", "Redis", "Node.js"],
+    category: "AI & LLM",
+    liveUrl: "https://orchestrationai.netlify.app/",
+    githubUrl: "",
   },
   {
     id: 3,
     title: "RAG System",
     description:
-      "An AI chatbot that gives accurate, context-aware answers using RAG, semantic search, and a Pinecone vector database, built with LangChain and FastAPI. Improves answer relevance and reduces made-up responses.",
-    tags: ["React", "Tailwind CSS", "Node.js", "Express", "FastAPI", "Python", "LangChain", "LangGraph", "Pinecone", "Vector Database", "Semantic Search", "RAG", "LLM"],
+      "An AI chatbot that gives accurate, context-aware answers using RAG, semantic search, and a Pinecone vector database.",
+    tags: ["LangChain", "Pinecone", "FastAPI", "RAG", "React"],
+    category: "AI & LLM",
     githubUrl: "https://github.com/zunair2002/RAG-application",
   },
   {
     id: 4,
     title: "SabziMart",
     description:
-      "A full-stack grocery delivery platform for customers, riders, and admins, with real-time order tracking, role-based access, and secure login. Connects the whole delivery process in one reliable system.",
-    tags: ["React", "Next.js", "TypeScript", "Node.js", "Express", "MongoDB", "Socket.IO", "Leaflet", "Cloudinary", "NextAuth", "RBAC", "Full-Stack", "Real-Time"],
+      "A full-stack grocery delivery platform for customers, riders, and admins, with real-time tracking and role-based access.",
+    tags: ["Next.js", "MongoDB", "Socket.IO", "NextAuth", "RBAC"],
+    category: "Full-Stack",
     githubUrl: "https://github.com/zunair2002/SabziMart",
   },
   {
     id: 5,
     title: "WalletWave",
     description:
-      "A real-time cryptocurrency dashboard that shows live market data and interactive Bitcoin price charts using the CoinGecko API and Chart.js. Makes market trends easy to follow on any device.",
-    tags: ["React", "JavaScript", "CoinGecko API", "REST API", "Chart.js", "Tailwind CSS", "Data Visualization", "Responsive Design"],
+      "A real-time cryptocurrency dashboard with live market data and interactive Bitcoin price charts.",
+    tags: ["React", "Chart.js", "CoinGecko API", "Tailwind CSS"],
+    category: "Frontend",
     githubUrl: "https://github.com/zunair2002/WalletWave",
   },
   {
     id: 6,
     title: "ChatGO",
     description:
-      "A real-time chat application using Socket.IO and WebSockets for instant messaging, with JWT authentication and MongoDB message storage. Delivers a fast, secure, and responsive conversation experience.",
-    tags: ["React", "Node.js", "Express", "Socket.IO", "WebSockets", "JWT", "Authentication", "MongoDB", "Real-Time", "REST API"],
+      "A real-time chat application using Socket.IO and JWT authentication, with persistent MongoDB message storage.",
+    tags: ["React", "Socket.IO", "JWT", "MongoDB", "Express"],
+    category: "Full-Stack",
     githubUrl: "https://github.com/zunair2002/ChatGO",
   },
   {
     id: 7,
     title: "Email Checker",
     description:
-      "An AI-powered phishing detector that uses machine learning and NLP to analyze emails and explain why a message looks safe or suspicious. Helps users spot threats and make safer decisions.",
-    tags: ["React", "Tailwind CSS", "Python", "Machine Learning", "NLP", "Grok AI SDK", "REST API", "Phishing Detection", "Cybersecurity", "Explainable AI"],
+      "An AI-powered phishing detector that uses machine learning and NLP to explain why a message looks safe or suspicious.",
+    tags: ["Python", "NLP", "Machine Learning", "React"],
+    category: "AI & LLM",
     githubUrl: "https://github.com/zunair2002/phishing-ML",
   },
   {
     id: 8,
     title: "Expense Tracker",
     description:
-      "A MERN stack finance dashboard that tracks income and expenses and shows spending habits through interactive Recharts visualizations. Helps users manage budgets and build smarter money habits.",
-    tags: ["React", "MongoDB", "Express", "Node.js", "MERN Stack", "Recharts", "Tailwind CSS", "LocalStorage", "REST API", "Data Visualization", "CRUD"],
+      "A MERN finance dashboard that tracks income and expenses and visualizes spending habits.",
+    tags: ["MERN", "Recharts", "MongoDB", "Tailwind CSS"],
+    category: "Full-Stack",
     githubUrl: "https://github.com/zunair2002/ExpenseApp-MERN",
   },
   {
-  id: 9,
-  title: "AI Voice Assistant",
-  description:
-    "A Python desktop voice assistant that recognizes spoken commands and responds with text-to-speech, enabling hands-free web searches, music playback, time queries, and everyday task automation.",
-  tags: ["Python", "Tkinter", "Speech Recognition", "Google Speech API", "pyttsx3", "Text-to-Speech", "PyAudio", "Desktop App", "Voice Commands"],
-  githubUrl: "YOUR_VOICE_ASSISTANT_GITHUB_URL",
-},
+    id: 9,
+    title: "AI Voice Assistant",
+    description:
+      "A Python desktop voice assistant that recognizes spoken commands and responds with text-to-speech.",
+    tags: ["Python", "Speech Recognition", "Tkinter", "pyttsx3"],
+    category: "AI & LLM",
+    githubUrl: "",
+  },
 ];
 
-export default function Projects() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: false, margin: "-10px" });
+type Project = (typeof demoprojects)[number];
+
+const filters: ("All" | Category)[] = ["All", "AI & LLM", "Full-Stack", "Frontend"];
+
+const coverFor = (id: number) => caseStudies.find((p) => p.id === id)?.coverImage;
+
+function ProjectCard({ project }: { project: Project }) {
+  const cover = coverFor(project.id);
+  const externalUrl = project.liveUrl || project.githubUrl;
+  const number = String(project.id).padStart(2, "0");
 
   return (
-   <section id="projects" ref={ref} className="w-full py-8 md:py-16">
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={inView ? { opacity: 1, y: 0 } : {}}
-    transition={{ duration: 0.6 }}
-    style={{ textAlign: "center", marginBottom: 60 }}
-  >
-    <h2
-      className="text-3xl md:text-6xl font-black"
-      style={{
-        fontFamily: "var(--font-michroma)",
-        color: "#b18cf5",
-      }}
+    <motion.article
+      layout
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="surface-card card-lift group flex h-full flex-col overflow-hidden"
     >
-      My Projects
-    </h2>
-  </motion.div>
+      <Link href={`/demoprojects/${project.id}`} className="block p-2.5 pb-0" aria-label={`${project.title} case study`}>
+        <div className="overflow-hidden rounded-[14px] border border-[#101051]/10 bg-[#101051]/[0.04]">
+          {/* Browser chrome */}
+          <div className="flex h-7 items-center gap-1.5 border-b border-[#101051]/[0.08] bg-white/80 px-3">
+            <span className="h-2 w-2 rounded-full bg-[#ff5f57]" />
+            <span className="h-2 w-2 rounded-full bg-[#febc2e]" />
+            <span className="h-2 w-2 rounded-full bg-[#28c840]" />
+            {project.liveUrl && (
+              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-[#32de84]/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#16884e]">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#32de84] opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#32de84]" />
+                </span>
+                Live
+              </span>
+            )}
+          </div>
 
-<div className="max-w-6xl mx-auto px-4 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">    {demoprojects.map((project, i) => (
-      <motion.div
-        key={project.id}
-        initial={{ opacity: 0, y: 40 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: i * 0.12 }}
-        whileHover={{ y: -6, transition: { duration: 0.2 } }}
-        style={{
-          border: "1px solid rgba(255, 255, 255, 0.56)",
-          borderRadius: 14,
-          padding: "18px 16px",
-          display: "flex",
-          flexDirection: "column",
-          gap: 12,
-          cursor: "default",
-          background: "rgba(255, 255, 255, 0.03)",
-          backdropFilter: "blur(10px)",
-          margin:"5px",
-          minHeight: "430px",
-        }}
-      >
-        <div>
-          <h3
-            style={{
-              fontFamily: "var(--font-michroma)",
-              fontSize: "clamp(1rem, 2vw, 1.3rem)",
-              fontWeight: 700,
-              color: "#e2d9f3",
-              marginTop: 0,
-              marginBottom: 10,
-            }}
-          >
-            {project.title}
-          </h3>
-
-          <p
-            className="leading-relaxed whitespace-pre-line"
-            style={{
-              fontSize: "clamp(0.8rem, 1.2vw, 0.93rem)",
-              lineHeight: 1.7,
-              color: "rgba(255,255,255,0.72)",
-              fontFamily: "var(--font-inter)",
-              // Keep every card's description and tag sections visually aligned.
-              height: "10.2em",
-              margin: 0,
-              overflow: "hidden",
-              display: "-webkit-box",
-              WebkitBoxOrient: "vertical",
-              WebkitLineClamp: 6,
-            }}
-          >
-            {project.description}
-          </p>
+          <div className="relative aspect-[16/10] overflow-hidden">
+            {cover ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={cover}
+                alt={`${project.title} preview`}
+                loading="lazy"
+                className="h-full w-full object-fill"
+              />
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-neutral-500">
+                {project.title}
+              </div>
+            )}
+            <div className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-[#101051]/70 via-[#101051]/10 to-transparent pb-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span className="inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-[#101051] shadow-lg transition-transform duration-300 group-hover:translate-y-0">
+                View case study
+                <ArrowUpRight size={14} />
+              </span>
+            </div>
+          </div>
         </div>
+      </Link>
 
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 6,
-            minHeight: "116px",
-            alignContent: "flex-start",
-          }}
-        >
-          {project.tags.map((tag, j) => (
-            <span
-              key={j}
-              style={{
-                padding: "3px 10px",
-                border: "1px solid #48474a",
-                background: "rgba(255, 255, 255, 0.05)",
-                borderRadius: 4,
-                fontSize: 11,
-                fontFamily: "var(--font-inter)",
-                color: "rgb(255, 255, 255)",
-              }}
-            >
+      <div className="flex flex-1 flex-col p-6 pt-5">
+        <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-[#16884e]">
+          {number} · {project.category}
+        </p>
+        <h3 className="mt-2 text-xl font-semibold tracking-tight text-[#101051]">
+          <Link href={`/demoprojects/${project.id}`} className="transition-colors hover:text-[#16884e]">
+            {project.title}
+          </Link>
+        </h3>
+        <p className="mt-2.5 flex-1 text-[14.5px] leading-7 text-neutral-600">{project.description}</p>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span key={tag} className="chip">
               {tag}
             </span>
           ))}
         </div>
 
-        <div style={{ display: "flex", gap: 10, marginTop: "auto" }}>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 7,
-              padding: "8px 0",
-              background: "rgba(255, 255, 255, 0.12)",
-              borderRadius: 8,
-              color: "#ffffff",
-              fontSize: 12,
-              textDecoration: "none",
-              fontWeight: 500,
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-            }}
-          >
-            <Box size={15} /> Code
-          </a>
-
+        <div className="mt-6 flex items-center justify-between gap-3 border-t border-[#101051]/10 pt-5">
           <Link
             href={`/demoprojects/${project.id}`}
-            style={{
-              flex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 7,
-              padding: "8px 0",
-              background: "#ffffff",
-              border: "1px solid rgba(0,0,0,0.08)",
-              borderRadius: 8,
-              color: "#000000",
-              fontSize: 12,
-              textDecoration: "none",
-              fontWeight: 500,
-              transition: "opacity 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.opacity = "0.85";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.opacity = "1";
-            }}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#101051] transition-colors hover:text-[#16884e]"
           >
-            <ExternalLink size={15} /> Demo
+            Case study
+            <ArrowUpRight
+              size={15}
+              className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
           </Link>
+          {externalUrl ? (
+            <a
+              href={externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] font-medium transition-colors ${
+                project.liveUrl
+                  ? "bg-[#32de84] text-[#101051] hover:bg-[#28cf78]"
+                  : "border border-[#101051]/12 text-[#101051]/75 hover:border-[#101051]/30 hover:text-[#101051]"
+              }`}
+            >
+              {project.liveUrl ? (
+                <>
+                  Live demo <ArrowUpRight size={14} />
+                </>
+              ) : (
+                <>
+                  <GithubIcon size={14} /> Source
+                </>
+              )}
+            </a>
+          ) : null}
         </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
+      </div>
+    </motion.article>
+  );
+}
+
+export default function Projects() {
+  const [filter, setFilter] = useState<(typeof filters)[number]>("All");
+  const visible = filter === "All" ? demoprojects : demoprojects.filter((p) => p.category === filter);
+
+  return (
+    <section id="projects" className="section-block">
+      <div className="page-shell">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <p className="section-kicker">04 — Projects</p>
+            <h2 className="section-title">
+              Selected <span className="serif-accent">work</span>
+            </h2>
+            <p className="section-copy">
+              AI systems, full-stack products, and interface libraries, each with a short case
+              study covering features and architecture.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            role="group"
+            aria-label="Filter projects"
+            className="-mx-1 flex w-fit max-w-full flex-wrap gap-1 rounded-full border border-[#101051]/10 bg-white/70 p-1 backdrop-blur"
+          >
+            {filters.map((f) => {
+              const isActive = filter === f;
+              const count = f === "All" ? demoprojects.length : demoprojects.filter((p) => p.category === f).length;
+              return (
+                <button
+                  key={f}
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => setFilter(f)}
+                  className={`relative isolate inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors sm:px-4 ${
+                    isActive ? "text-white" : "text-[#101051]/65 hover:text-[#101051]"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="project-filter-pill"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      className="absolute inset-0 -z-10 rounded-full bg-[#101051]"
+                    />
+                  )}
+                  {f}
+                  <span className={`font-mono text-[10.5px] ${isActive ? "text-[#32de84]" : "text-[#101051]/40"}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </motion.div>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {visible.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
