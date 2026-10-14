@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #07090e;
-  --fg: #f3efe6;
-  --muted: rgba(243, 239, 230, 0.7);
-  --faint: rgba(243, 239, 230, 0.46);
-  --accent: #7dd3c7;
-  --accent-soft: rgba(125, 211, 199, 0.12);
-  --card: rgba(255, 255, 255, 0.035);
-  --card-hover: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.2);
+  --bg: #F7F6F2;
+  --fg: #111111;
+  --muted: rgba(17, 17, 17, 0.68);
+  --faint: rgba(17, 17, 17, 0.46);
+  --accent: #16884e;
+  --accent-strong: #32de84;
+  --accent-soft: rgba(50, 222, 132, 0.12);
+  --card: rgba(255, 255, 255, 0.68);
+  --card-hover: rgba(255, 255, 255, 0.9);
+  --border: rgba(17, 17, 17, 0.12);
+  --border-strong: rgba(17, 17, 17, 0.28);
 }
 
 /* Tailwind preflight already resets margin/padding. Custom rules live in
@@ -36,8 +37,8 @@
   }
 
   ::selection {
-    background: rgba(125, 211, 199, 0.3);
-    color: #fff;
+    background: rgba(50, 222, 132, 0.45);
+    color: #111;
   }
 
   ::-webkit-scrollbar {
@@ -49,12 +50,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(125, 211, 199, 0.3);
+    background: rgba(22, 136, 78, 0.35);
     border-radius: 999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(125, 211, 199, 0.5);
+    background: rgba(22, 136, 78, 0.55);
   }
 
   :focus-visible {
@@ -163,25 +164,25 @@
   }
 
   .btn-primary {
-    background: var(--fg);
-    color: #111318;
-    border: 1px solid var(--fg);
+    background: var(--accent-strong);
+    color: #111;
+    border: 1px solid #111;
   }
 
   .btn-primary:hover {
-    background: #ffffff;
+    background: #28cf78;
     transform: translateY(-1px);
   }
 
   .btn-secondary {
-    background: rgba(255, 255, 255, 0.02);
-    color: var(--fg);
-    border: 1px solid var(--border-strong);
+    background: #fff;
+    color: #111;
+    border: 1px solid #111;
   }
 
   .btn-secondary:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    background: #f0efe9;
+    transform: translateY(-1px);
   }
 
   .icon-btn {
@@ -217,8 +218,8 @@
 
   .grid-backdrop {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
   }

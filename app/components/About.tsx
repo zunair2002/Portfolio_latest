@@ -35,7 +35,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="surface-card p-6 md:p-8"
           >
-            <div className="space-y-5 text-[15.5px] leading-7 text-white/72 whitespace-pre-line">
+            <div className="space-y-5 whitespace-pre-line text-[15.5px] leading-7 text-neutral-700">
               {aboutData.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -51,8 +51,8 @@ export default function About() {
           >
             {highlights.map((item) => (
               <div key={item.label} className="surface-card p-5">
-                <p className="text-xs uppercase tracking-[0.18em] text-[#7dd3c7]">{item.label}</p>
-                <p className="mt-2 text-lg font-medium text-[#f3efe6]">{item.value}</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-[#16884e]">{item.label}</p>
+                <p className="mt-2 text-lg font-medium text-neutral-900">{item.value}</p>
               </div>
             ))}
           </motion.div>

@@ -100,7 +100,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <Link
         href={`/demoprojects/${project.id}`}
-        className="relative block border-b border-white/8"
+        className="relative block border-b border-neutral-900/10"
       >
         {cover ? (
           <img
@@ -110,20 +110,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             className="block h-[180px] w-full"
           />
         ) : (
-          <div className="flex aspect-[16/10] items-center justify-center text-sm text-white/30">
+          <div className="flex aspect-[16/10] items-center justify-center text-sm text-neutral-500">
             {project.title}
           </div>
         )}
-        <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-black/60 px-2.5 py-1 font-mono text-[11px] text-white/80 backdrop-blur">
+        <span className="absolute left-4 top-4 rounded-full border border-neutral-900/15 bg-white/90 px-2.5 py-1 font-mono text-[11px] text-neutral-900 backdrop-blur">
           {String(index + 1).padStart(2, "0")}
         </span>
       </Link>
 
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-xl font-semibold tracking-tight text-[#f3efe6]">
+        <h3 className="text-xl font-semibold tracking-tight text-neutral-900">
           {project.title}
         </h3>
-        <p className="mt-3 flex-1 text-[14.5px] leading-7 text-white/65">{project.description}</p>
+        <p className="mt-3 flex-1 text-[14.5px] leading-7 text-neutral-600">{project.description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {project.tags.slice(0, 4).map((tag) => (
@@ -133,10 +133,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           ))}
         </div>
 
-        <div className="mt-6 flex items-center justify-between gap-3 border-t border-white/8 pt-5">
+        <div className="mt-6 flex items-center justify-between gap-3 border-t border-neutral-900/10 pt-5">
           <Link
             href={`/demoprojects/${project.id}`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#f3efe6] transition-colors hover:text-[#7dd3c7]"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-neutral-900 transition-colors hover:text-[#16884e]"
           >
             View case study
             <ArrowUpRight size={15} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
@@ -146,7 +146,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               href={externalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-white/55 transition-colors hover:text-[#7dd3c7]"
+              className="inline-flex items-center gap-1.5 text-sm text-neutral-600 transition-colors hover:text-[#16884e]"
             >
               {project.liveUrl ? (
                 <>

@@ -37,14 +37,14 @@ export default function Skills() {
               transition={{ duration: 0.5, delay: i * 0.08 }}
               className="surface-card p-6"
             >
-              <h3 className="mb-4 text-sm uppercase tracking-[0.16em] text-[#7dd3c7]">
+              <h3 className="mb-4 text-sm uppercase tracking-[0.16em] text-[#16884e]">
                 {group.title}
               </h3>
               <div className="flex flex-wrap gap-2.5">
                 {group.items.map((skill) => (
                   <span
                     key={skill.name}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-white/80"
+                    className="inline-flex items-center gap-2 rounded-full border border-neutral-900/10 bg-white/70 px-3 py-1.5 text-sm text-neutral-700"
                   >
                     {"icon" in skill && typeof skill.icon === "string" ? (
                       <img
@@ -52,7 +52,7 @@ export default function Skills() {
                         alt=""
                         className={`h-4 w-4 object-contain ${
                           ["GitHub", "Next.js", "Express.js", "Vercel"].includes(skill.name)
-                            ? "invert"
+                            ? ""
                             : ""
                         }`}
                       />

@@ -12,12 +12,12 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <>
-        <div className="fixed inset-0 -z-10 bg-[#06080d]" />
+        <div className="fixed inset-0 -z-10 bg-[#F7F6F2]" />
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <ReflectBackground />
         </div>
         <div className="relative z-10 flex min-h-screen items-center justify-center">
-          <p className="text-white/70">Project not found.</p>
+          <p className="text-neutral-600">Project not found.</p>
         </div>
       </>
     );
@@ -25,7 +25,7 @@ export default function ProjectDetail() {
 
   return (
     <>
-      <div className="fixed inset-0 -z-10 bg-[#06080d]" />
+      <div className="fixed inset-0 -z-10 bg-[#F7F6F2]" />
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <ReflectBackground />
       </div>
@@ -42,7 +42,7 @@ export default function ProjectDetail() {
             <h1 className="section-title">{project.title}</h1>
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <span className="chip">{project.status}</span>
-              <span className="inline-flex items-center gap-2 text-sm text-white/60">
+              <span className="inline-flex items-center gap-2 text-sm text-neutral-600">
                 <Clock size={14} />
                 {project.duration}
               </span>
@@ -51,7 +51,7 @@ export default function ProjectDetail() {
           </div>
 
           <section className="mt-12">
-            <h2 className="mb-5 text-lg font-semibold tracking-tight text-[#f3efe6]">Screenshots</h2>
+            <h2 className="mb-5 text-lg font-semibold tracking-tight text-neutral-900">Screenshots</h2>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               {project.screenshots?.length > 0 ? (
                 project.screenshots.map((src, i) => (
@@ -59,11 +59,11 @@ export default function ProjectDetail() {
                     key={src}
                     src={src}
                     alt={`${project.title} screenshot ${i + 1}`}
-                    className="h-[280px] w-full rounded-2xl border border-white/10 object-contain"
+                    className="h-[280px] w-full rounded-2xl border border-neutral-900/10 object-contain"
                   />
                 ))
               ) : (
-                <div className="surface-card col-span-full p-10 text-center text-sm text-white/40">
+                <div className="surface-card col-span-full p-10 text-center text-sm text-neutral-500">
                   Screenshots coming soon
                 </div>
               )}
@@ -71,11 +71,11 @@ export default function ProjectDetail() {
           </section>
 
           <section className="surface-card mt-10 p-6 md:p-8">
-            <h2 className="mb-5 text-lg font-semibold tracking-tight text-[#f3efe6]">Key features</h2>
+            <h2 className="mb-5 text-lg font-semibold tracking-tight text-neutral-900">Key features</h2>
             <ul className="grid gap-3 md:grid-cols-2">
               {project.features?.map((feature) => (
-                <li key={feature} className="flex gap-3 text-sm leading-6 text-white/72">
-                  <CheckCircle size={16} className="mt-0.5 shrink-0 text-[#7dd3c7]" />
+                <li key={feature} className="flex gap-3 text-sm leading-6 text-neutral-700">
+                  <CheckCircle size={16} className="mt-0.5 shrink-0 text-[#16884e]" />
                   {feature}
                 </li>
               ))}
@@ -83,12 +83,12 @@ export default function ProjectDetail() {
           </section>
 
           <section className="surface-card mt-6 p-6 md:p-8">
-            <h2 className="mb-5 text-lg font-semibold tracking-tight text-[#f3efe6]">Tech stack</h2>
+            <h2 className="mb-5 text-lg font-semibold tracking-tight text-neutral-900">Tech stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.techStack?.map((tech) => (
-                <div key={tech.name} className="rounded-2xl border border-white/10 bg-white/5 px-3 py-2">
-                  <p className="text-sm text-[#f3efe6]">{tech.name}</p>
-                  <p className="text-xs text-white/45">{tech.purpose}</p>
+                <div key={tech.name} className="rounded-2xl border border-neutral-900/10 bg-white/60 px-3 py-2">
+                  <p className="text-sm text-neutral-900">{tech.name}</p>
+                  <p className="text-xs text-neutral-500">{tech.purpose}</p>
                 </div>
               ))}
             </div>

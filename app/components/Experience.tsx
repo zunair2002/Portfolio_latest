@@ -21,7 +21,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative mt-14 space-y-5 pl-2 md:pl-0">
-          <div className="absolute bottom-6 left-[11px] top-6 hidden w-px bg-gradient-to-b from-transparent via-white/15 to-transparent md:block" />
+          <div className="absolute bottom-6 left-[11px] top-6 hidden w-px bg-gradient-to-b from-transparent via-neutral-900/15 to-transparent md:block" />
 
           {experienceData.map((exp, i) => (
             <motion.article
@@ -32,24 +32,24 @@ export default function Experience() {
               transition={{ duration: 0.55, delay: i * 0.08 }}
               className="relative md:pl-10"
             >
-              <div className="absolute left-[5px] top-8 hidden h-3.5 w-3.5 rounded-full border-2 border-[#7dd3c7] bg-[#06080d] md:block" />
+              <div className="absolute left-[5px] top-8 hidden h-3.5 w-3.5 rounded-full border-2 border-[#32de84] bg-[#F7F6F2] md:block" />
               <div className="surface-card p-6 md:p-8">
                 <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                   <div>
-                    <h3 className="text-xl font-semibold tracking-tight text-[#f3efe6]">
+                    <h3 className="text-xl font-semibold tracking-tight text-neutral-900">
                       {exp.role}
                     </h3>
-                    <p className="mt-1 text-sm text-[#7dd3c7]">{exp.company}</p>
+                    <p className="mt-1 text-sm text-[#16884e]">{exp.company}</p>
                   </div>
-                  <span className="w-fit rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/65">
+                  <span className="w-fit rounded-full border border-neutral-900/10 bg-white/70 px-3 py-1 text-xs text-neutral-600">
                     {exp.period}
                   </span>
                 </div>
 
                 <ul className="mt-5 space-y-3">
                   {exp.points.map((pt) => (
-                    <li key={pt} className="flex gap-3 text-[15px] leading-7 text-white/72">
-                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#7dd3c7]" />
+                    <li key={pt} className="flex gap-3 text-[15px] leading-7 text-neutral-700">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#32de84]" />
                       {pt}
                     </li>
                   ))}

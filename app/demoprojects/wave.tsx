@@ -46,6 +46,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     colour = clamp(colour * vec3(0.16, 0.28, 0.48), 0.0, 1.0);
     colour = mix(colour, vec3(0.05, 0.08, 0.14), 0.55);
+    float wave = smoothstep(0.09, 0.35, length(colour)) * 0.32;
+    colour = mix(vec3(0.969, 0.965, 0.949), vec3(0.82, 0.96, 0.87), wave);
 
     fragColor = vec4(colour, 1.0);
 }

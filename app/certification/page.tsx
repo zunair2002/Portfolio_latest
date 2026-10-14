@@ -53,7 +53,7 @@ const certificates = [
 export default function CertificationPage() {
   return (
     <>
-      <div className="fixed inset-0 -z-10 bg-[#06080d]" />
+      <div className="fixed inset-0 -z-10 bg-[#F7F6F2]" />
 
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <ReflectBackground />
@@ -95,16 +95,16 @@ export default function CertificationPage() {
                     className="h-48 w-full object-cover object-top"
                   />
                 ) : (
-                  <div className="flex h-48 items-center justify-center text-sm text-white/40">
+                  <div className="flex h-48 items-center justify-center text-sm text-neutral-500">
                     Certificate image coming soon
                   </div>
                 )}
 
                 <div className="flex flex-1 flex-col p-5">
-                  <h3 className="text-lg font-semibold tracking-tight text-[#f3efe6]">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-white/65">{item.description}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/75">
-                    <ShieldCheck size={13} className="text-[#7dd3c7]" />
+                  <h3 className="text-lg font-semibold tracking-tight text-neutral-900">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-neutral-600">{item.description}</p>
+                  <div className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-neutral-900/15 bg-white/70 px-3 py-1.5 text-xs text-neutral-700">
+                    <ShieldCheck size={13} className="text-[#16884e]" />
                     {item.issuer}
                   </div>
                 </div>

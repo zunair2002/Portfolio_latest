@@ -11,7 +11,7 @@ import ReflectBackground from "./demoprojects/wave";
 export default function Home() {
   return (
     <>
-      <div className="fixed inset-0 -z-10 bg-[#06080d]" />
+      <div className="fixed inset-0 -z-10 bg-[#F7F6F2]" />
 
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <ReflectBackground />

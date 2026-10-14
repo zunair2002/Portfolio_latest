@@ -34,13 +34,13 @@ export default function Footer() {
           viewport={{ once: true }}
           className="surface-card relative overflow-hidden p-8 md:p-14"
         >
-          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#7dd3c7]/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#32de84]/15 blur-3xl" />
 
           <p className="section-kicker">Contact</p>
-          <h2 className="max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#f3efe6] md:text-5xl">
+          <h2 className="max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] text-neutral-900 md:text-5xl">
             Have a role or project in mind? Let&apos;s talk.
           </h2>
-          <p className="mt-5 max-w-xl text-[16px] leading-7 text-white/62">
+          <p className="mt-5 max-w-xl text-[16px] leading-7 text-neutral-600">
             I&apos;m open to full-stack, AI, and product engineering roles, as well as freelance
             work. I usually reply within a day.
           </p>
@@ -60,14 +60,14 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/8 pt-6">
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-neutral-900/10 pt-6">
             {socials.map(({ href, label, Icon }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-white/65 transition-colors hover:text-[#7dd3c7]"
+                className="inline-flex items-center gap-2 text-sm text-neutral-600 transition-colors hover:text-[#16884e]"
               >
                 <Icon size={16} />
                 {label}
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        <div className="mt-10 flex flex-col gap-2 text-[13px] text-white/40 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-2 text-[13px] text-neutral-500 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Zunair Shahid. All rights reserved.</p>
           <p>Full-Stack AI Engineer · {heroData.location}</p>
         </div>
