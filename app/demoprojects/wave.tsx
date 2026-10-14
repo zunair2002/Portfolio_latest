@@ -141,9 +141,11 @@ function ReflectBackground({
     const render = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
-      canvas.width = width;
-      canvas.height = height;
-      gl.viewport(0, 0, width, height);
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+        gl.viewport(0, 0, width, height);
+      }
 
       const currentTime = (Date.now() - startTime) / 1000;
 

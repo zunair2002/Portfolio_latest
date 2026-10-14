@@ -9,7 +9,7 @@ export const heroData = {
   stats: [
     { value: "9+", label: "Projects shipped" },
     { value: "6", label: "Certifications" },
-    { value: "25+", label: "UI components open-sourced" },
+    { value: "25+", label: "Open-source components" },
   ],
 };
 

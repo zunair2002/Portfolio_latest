@@ -3,15 +3,18 @@
 :root {
   --bg: #F7F6F2;
   --fg: #111111;
+  --navy: #101051;
+  --navy-soft: rgba(16, 16, 81, 0.06);
   --muted: rgba(17, 17, 17, 0.68);
   --faint: rgba(17, 17, 17, 0.46);
   --accent: #16884e;
   --accent-strong: #32de84;
   --accent-soft: rgba(50, 222, 132, 0.12);
-  --card: rgba(255, 255, 255, 0.68);
-  --card-hover: rgba(255, 255, 255, 0.9);
-  --border: rgba(17, 17, 17, 0.12);
-  --border-strong: rgba(17, 17, 17, 0.28);
+  --card: rgba(255, 255, 255, 0.72);
+  --card-hover: rgba(255, 255, 255, 0.95);
+  --border: rgba(16, 16, 81, 0.1);
+  --border-strong: rgba(16, 16, 81, 0.22);
+  --shadow-lift: 0 24px 48px -24px rgba(16, 16, 81, 0.28);
 }
 
 /* Tailwind preflight already resets margin/padding. Custom rules live in
@@ -50,12 +53,12 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(22, 136, 78, 0.35);
+    background: rgba(16, 16, 81, 0.25);
     border-radius: 999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(22, 136, 78, 0.55);
+    background: rgba(16, 16, 81, 0.45);
   }
 
   :focus-visible {
@@ -81,12 +84,12 @@
 
   .section-block {
     width: 100%;
-    padding-block: 80px;
+    padding-block: 72px;
   }
 
   @media (min-width: 768px) {
     .section-block {
-      padding-block: 112px;
+      padding-block: 104px;
     }
   }
 
@@ -112,11 +115,22 @@
   }
 
   .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    letter-spacing: -0.035em;
-    font-weight: 600;
-    color: var(--fg);
+    font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    color: var(--navy);
+    text-wrap: balance;
+  }
+
+  /* Editorial italic accent used for one or two words inside a heading. */
+  .serif-accent {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    padding-right: 0.06em;
   }
 
   .section-copy {
@@ -133,9 +147,10 @@
     border-radius: 20px;
     backdrop-filter: blur(16px);
     transition:
-      border-color 0.25s ease,
-      background 0.25s ease,
-      transform 0.25s ease;
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .surface-card:hover {
@@ -143,8 +158,23 @@
     border-color: var(--border-strong);
   }
 
+  /* `translate` (not `transform`) so it composes with framer-motion's inline transforms. */
+  .card-lift {
+    transition:
+      border-color 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease,
+      translate 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-lift:hover {
+    translate: 0 -4px;
+    box-shadow: var(--shadow-lift);
+  }
+
   .btn-primary,
-  .btn-secondary {
+  .btn-secondary,
+  .btn-navy {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -153,19 +183,21 @@
     padding: 0 20px;
     border-radius: 999px;
     font-size: 14px;
-    font-weight: 560;
+    font-weight: 600;
     white-space: nowrap;
     text-decoration: none;
     transition:
       transform 0.2s ease,
       background 0.2s ease,
       border-color 0.2s ease,
+      box-shadow 0.2s ease,
       color 0.2s ease;
   }
 
   .btn-primary {
     background: var(--accent-strong);
-    color: #111;
+    color: #0b0b3a;
+    box-shadow: 0 10px 24px -12px rgba(22, 136, 78, 0.7);
   }
 
   .btn-primary:hover {
@@ -173,14 +205,25 @@
     transform: translateY(-1px);
   }
 
+  .btn-navy {
+    background: var(--navy);
+    color: #fff;
+    box-shadow: 0 10px 24px -12px rgba(16, 16, 81, 0.7);
+  }
+
+  .btn-navy:hover {
+    background: #1a1a73;
+    transform: translateY(-1px);
+  }
+
   .btn-secondary {
     background: #fff;
-    color: #111;
-    border: 1px solid #111;
+    color: var(--navy);
+    border: 1px solid rgba(16, 16, 81, 0.18);
   }
 
   .btn-secondary:hover {
-    background: #f0efe9;
+    border-color: rgba(16, 16, 81, 0.45);
     transform: translateY(-1px);
   }
 
@@ -209,17 +252,87 @@
     padding: 4px 10px;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--muted);
+    background: rgba(255, 255, 255, 0.6);
+    color: rgba(16, 16, 81, 0.78);
     font-size: 12px;
+    font-weight: 500;
     line-height: 1.4;
   }
 
   .grid-backdrop {
     background-image:
-      linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
-    background-size: 64px 64px;
+      linear-gradient(rgba(16, 16, 81, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16, 16, 81, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+  }
+
+  .marquee-mask {
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-mask:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: float 7.5s ease-in-out -2s infinite;
+  }
+
+  .caret::after {
+    content: "";
+    display: inline-block;
+    width: 0.55ch;
+    height: 1.05em;
+    margin-left: 2px;
+    vertical-align: -0.15em;
+    background: var(--accent-strong);
+    animation: blink 1s steps(1) infinite;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .float-slow,
+  .float-slower,
+  .caret::after {
+    animation: none;
   }
 }

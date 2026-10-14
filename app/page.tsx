@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TechMarquee from "./components/TechMarquee";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -20,6 +21,7 @@ export default function Home() {
       <main className="relative z-10 w-full overflow-x-hidden">
         <Navbar />
         <Hero />
+        <TechMarquee />
         <About />
         <Experience />
         <Skills />
