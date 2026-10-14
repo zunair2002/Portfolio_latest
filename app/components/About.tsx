@@ -1,13 +1,26 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Brain, Layers, MapPin } from "lucide-react";
+import { Brain, Check, Layers, MapPin } from "lucide-react";
 import { aboutData, heroData } from "./data";
 
 const highlights = [
-  { label: "Focus", value: "Full-Stack + AI", Icon: Brain },
-  { label: "Stack", value: "MERN, Next.js, RAG", Icon: Layers },
-  { label: "Based in", value: aboutData.location, Icon: MapPin },
+  {
+    label: "Focus",
+    value: "Full-Stack Engineering & AI Systems",
+    points: [
+      "Building secure, scalable web apps across healthcare SaaS and freelance projects.",
+    ],
+    tags: ["Full-Stack", "RAG", "Multi-Agent"],
+  },
+  {
+    label: "Core Stack",
+    value: "React, Next.js, Node.js, TypeScript",
+    points: [
+      "Responsive frontends with Next.js, TypeScript and Tailwind CSS.",
+    ],
+    tags: ["React.js", "Next.js", "Node.js", "TypeScript"],
+  },
 ];
 
 const reveal = (delay = 0) => ({
@@ -29,8 +42,7 @@ export default function About() {
             A little <span className="serif-accent">about me</span>
           </h2>
           <p className="section-copy">
-            I design and ship end-to-end products — from clean interfaces to reliable APIs
-            and intelligent AI features that actually help users.
+            I build end-to-end software solutions, combining intuitive interfaces, secure backend systems, and practical AI capabilities to solve real-world problems.
           </p>
         </motion.div>
 
@@ -63,52 +75,68 @@ export default function About() {
               />
               <div className="leading-tight">
                 <p className="text-sm font-semibold text-[#101051]">{heroData.name}</p>
-                <p className="mt-0.5 text-[13px] text-neutral-500">Full-Stack AI Engineer</p>
+                <p className="mt-0.5 text-[13px] text-neutral-500">Full-Stack Engineer</p>
               </div>
             </div>
           </motion.div>
 
-          <div className="grid gap-5">
-            {highlights.map(({ label, value, Icon }, i) => {
-              const featured = i === 0;
-              return (
+          {/* Timeline highlights */}
+          <div className="relative">
+            {/* Timeline line and markers match the experience section. */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-4 left-[7px] top-3 w-px bg-gradient-to-b from-[#32de84] via-[#101051]/20 to-transparent"
+            />
+
+            <div className="flex flex-col gap-5">
+              {highlights.map(({ label, value, points, tags }, i) => (
                 <motion.div
                   key={label}
-                  {...reveal(0.15 + i * 0.08)}
-                  className={`group relative flex items-center gap-5 overflow-hidden rounded-[20px] border p-6 transition-all duration-300 hover:-translate-y-1 ${
-                    featured
-                      ? "border-[#101051] bg-[#101051] text-white shadow-[0_24px_48px_-24px_rgba(16,16,81,0.7)]"
-                      : "surface-card hover:shadow-[var(--shadow-lift)]"
-                  }`}
+                  {...reveal(0.15 + i * 0.1)}
+                  className="relative pl-9"
                 >
-                  {featured && (
-                    <span
-                      aria-hidden="true"
-                      className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#32de84]/30 blur-2xl"
-                    />
-                  )}
                   <span
-                    className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110 ${
-                      featured ? "bg-[#32de84] text-[#101051]" : "bg-[#101051]/[0.06] text-[#101051]"
-                    }`}
+                    aria-hidden="true"
+                    className="absolute left-0 top-[7px] z-10 flex h-[15px] w-[15px] items-center justify-center"
                   >
-                    <Icon size={21} />
+                    <span className="h-[15px] w-[15px] rounded-full border-[3px] border-[#32de84] bg-[#F7F6F2]" />
                   </span>
-                  <div className="relative">
-                    <p
-                      className={`font-mono text-[11px] uppercase tracking-[0.18em] ${
-                        featured ? "text-[#32de84]" : "text-[#16884e]"
-                      }`}
-                    >
+
+                  {/* card */}
+                  <div className="rounded-[22px] border border-[#101051]/10 bg-white/70 p-5 shadow-[0_2px_10px_-6px_rgba(16,16,81,0.2)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-lift)] md:p-6">
+                    <p className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-[#16884e]">
                       {label}
                     </p>
-                    <p className={`mt-1.5 text-lg font-semibold tracking-tight ${featured ? "text-white" : "text-[#101051]"}`}>
-                      {value}
-                    </p>
+
+                    <h3 className="mt-1.5 flex items-start gap-2 text-[17px] font-semibold leading-snug tracking-tight text-[#101051]">
+                      <span>{value}</span>
+                    </h3>
+
+                    <ul className="mt-4 space-y-3">
+                      {points.map((p) => (
+                        <li key={p} className="flex items-start gap-3 text-[14px] leading-6 text-neutral-600">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#32de84]/20 text-[#16884e]">
+                            <Check size={12} strokeWidth={3} />
+                          </span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-[#101051]/10 bg-white px-3 py-1 text-[12px] text-[#101051]/75"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </div>

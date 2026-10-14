@@ -2,23 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { animate, motion, useInView, useReducedMotion } from "framer-motion";
-import { ArrowRight, Code2, FileText, Mail, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, FileText, Mail, MapPin } from "lucide-react";
 import { contactData, heroData } from "./data";
 import { GithubIcon, LinkedinIcon } from "./SocialIcons";
 
-/**
- * Palette
- *  navy   #101051  -> headings, primary button, decorative block
- *  green  #32de84  -> accent only (dots, chips, underlines, focus ring)
- *  paper  #F7F6F2  -> page background
- *  black  #0A0A0A  -> body-strong text
- *
- * One-screen layout (desktop):
- *  - Section height = 100svh minus navbar, content vertically centred.
- *  - H1 and photo scale with viewport HEIGHT (vh) so everything
- *    (badge, name, copy, buttons, stats, photo) always fits without scrolling.
- *  - Photo is a fixed 4:5 ratio: width = 0.8 x height.
- */
 
 const buildingWords = [
   "multi-agent AI systems",
@@ -172,7 +159,7 @@ export default function Hero() {
               {...fadeUp(0.12)}
               className="mt-3 text-[clamp(1.4rem,2.4vw,1.9rem)] font-semibold tracking-[-0.02em] text-[#0A0A0A]"
             >
-              Full-Stack <span className="serif-accent text-[1.12em]">AI Engineer</span>
+              Full-Stack <span className="serif-accent text-[1.12em]">Engineer</span>
             </motion.p>
 
             <motion.p
@@ -192,8 +179,7 @@ export default function Hero() {
               {...fadeUp(0.2)}
               className="mt-5 max-w-[36rem] text-base leading-[1.7] text-neutral-600 lg:text-[17px]"
             >
-              {heroData.description} I specialise in the MERN stack, Next.js, and LLM-powered
-              systems built with RAG and multi-agent orchestration.
+              {heroData.description}
             </motion.p>
 
             {/* CTAs + socials */}
@@ -278,34 +264,13 @@ export default function Hero() {
                 sizes="(min-width: 1024px) 390px, 300px"
                 className="object-cover object-[50%_18%] grayscale transition duration-700 group-hover:scale-[1.04] group-hover:grayscale-0"
               />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/55 to-transparent"
-              />
+
               <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[12px] font-semibold text-[#101051] backdrop-blur">
                 <MapPin size={13} />
                 {heroData.location}
               </div>
             </div>
 
-            {/* Open-source chip */}
-            <div className="float-slow absolute -left-3 top-7 flex items-center gap-2 rounded-full border border-[#101051]/10 bg-white py-1.5 pl-1.5 pr-3.5 text-[12px] font-semibold text-[#101051] shadow-[0_14px_30px_-10px_rgba(16,16,81,0.35)] sm:-left-8">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#32de84]/20 text-[#16884e]">
-                <Code2 size={13} strokeWidth={2.5} />
-              </span>
-              Author of Ruler.ui
-            </div>
-
-            {/* Focus card */}
-            <div className="float-slower absolute -right-4 bottom-[22%] flex items-center gap-3 rounded-2xl border border-[#101051]/10 bg-white/95 py-2.5 pl-2.5 pr-4 shadow-[0_18px_40px_-14px_rgba(16,16,81,0.4)] backdrop-blur sm:-right-10">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#101051] text-[#32de84]">
-                <Sparkles size={17} />
-              </span>
-              <span className="leading-tight">
-                <span className="block text-[12.5px] font-semibold text-[#101051]">Shipping AI products</span>
-                <span className="block font-mono text-[10.5px] text-neutral-500">RAG · LangGraph · MERN</span>
-              </span>
-            </div>
           </motion.div>
         </div>
       </div>

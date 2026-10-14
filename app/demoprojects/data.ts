@@ -53,7 +53,7 @@ export const demoprojects = [
       { name: "Redis", purpose: "High-speed response caching" },
     ],
     coverImage: "/OrchestrAI/orchestr3.png",
-    screenshots: ["/OrchestrAI/OrchesterPage.png"],
+    screenshots: ["/OrchestrAI/OrchesterPage.png", "/OrchestrAI/hemello.png"],
   },
   {
     id: 3,
@@ -229,7 +229,7 @@ export const demoprojects = [
       { name: "LocalStorage", purpose: "Client-side state caching" },
       { name: "Tailwind CSS", purpose: "Responsive styling" },
     ],
-    coverImage: "/expensetracker/e1.png",
+    coverImage: "/expensetracker/Gemini_Generated_Image_uww56guww56guww5.jpg",
     screenshots: [
       "/expensetracker/e2.png",
       "/expensetracker/e3.png",

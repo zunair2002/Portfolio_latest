@@ -91,7 +91,7 @@ export default function Navbar() {
               <span className="hidden flex-col leading-tight sm:flex">
                 <span className="text-sm font-semibold tracking-tight text-[#101051]">Zunair Shahid</span>
                 <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#16884e]">
-                  AI Engineer
+                Engineer
                 </span>
               </span>
             </a>

@@ -1,7 +1,57 @@
 "use client";
 import { skillsRow1, skillsRow2, skillsRow3 } from "./data";
 
-const tools = [...skillsRow2, ...skillsRow1, ...skillsRow3];
+type Tool = { name: string; icon: string };
+
+const rows: { items: Tool[]; direction: "ltr" | "rtl"; duration: number }[] = [
+  { items: skillsRow1, direction: "ltr", duration: 45 }, // left -> right
+  { items: skillsRow2, direction: "rtl", duration: 50 }, // right -> left
+  { items: skillsRow3, direction: "ltr", duration: 55 }, // left -> right
+];
+
+function MarqueeRow({
+  items,
+  direction,
+  duration,
+}: {
+  items: Tool[];
+  direction: "ltr" | "rtl";
+  duration: number;
+}) {
+  // Base set repeated twice so the row is always wider than the screen,
+  // then rendered twice more for the seamless -50% loop.
+  const base = [...items, ...items];
+  const loop = [...base, ...base];
+
+  return (
+    <div className="marquee-mask overflow-hidden">
+      <ul
+        className={`marquee-row ${direction === "ltr" ? "marquee-ltr" : "marquee-rtl"}`}
+        style={{ animationDuration: `${duration}s` }}
+      >
+        {loop.map((tool, i) => (
+          <li
+            key={`${tool.name}-${i}`}
+            aria-hidden={i >= items.length}
+            className="mx-3 flex w-16 shrink-0 flex-col items-center gap-1.5 md:mx-4 md:w-20"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={tool.icon}
+              alt={i < items.length ? tool.name : ""}
+              width={32}
+              height={32}
+              className="h-7 w-7 object-contain md:h-8 md:w-8"
+            />
+            <span className="w-full truncate text-center text-[10px] font-medium text-[#101051]/60">
+              {tool.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function TechMarquee() {
   return (
@@ -12,20 +62,12 @@ export default function TechMarquee() {
         </p>
       </div>
 
-      <div className="marquee-mask overflow-hidden border-y border-[#101051]/[0.08] bg-white/50 py-5 backdrop-blur-sm">
-        <ul className="marquee-track">
-          {[...tools, ...tools].map((tool, i) => (
-            <li
-              key={`${tool.name}-${i}`}
-              aria-hidden={i >= tools.length}
-              className="mx-3 flex shrink-0 items-center gap-2.5 rounded-full border border-[#101051]/[0.08] bg-white px-4 py-2 text-[14px] font-medium text-[#101051]/85 shadow-[0_4px_14px_-8px_rgba(16,16,81,0.25)]"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={tool.icon} alt="" width={20} height={20} className="h-5 w-5 object-contain" />
-              {tool.name}
-            </li>
+      <div className="flex flex-col gap-5 py-6">
+        <div className="page-shell flex flex-col gap-5">
+          {rows.map((row, idx) => (
+            <MarqueeRow key={idx} {...row} />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

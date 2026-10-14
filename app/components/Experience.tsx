@@ -59,7 +59,6 @@ export default function Experience() {
                 <div className="md:pr-10 md:pt-7 md:text-right">
                   <p className="font-mono text-[12.5px] font-medium text-[#101051]">{exp.period}</p>
                   <p className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-[#16884e] md:justify-end">
-                    <Briefcase size={13} className="md:order-last" />
                     {exp.company}
                   </p>
                   {current && (

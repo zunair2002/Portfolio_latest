@@ -115,7 +115,7 @@ export default function Footer() {
         <div className="mt-8 flex flex-col gap-3 text-[13px] text-neutral-500 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Zunair Shahid. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <p>Full-Stack AI Engineer · {heroData.location}</p>
+            <p>Full-Stack Engineer · {heroData.location}</p>
             <a
               href="#top"
               className="group inline-flex items-center gap-1.5 font-medium text-[#101051] transition-colors hover:text-[#16884e]"

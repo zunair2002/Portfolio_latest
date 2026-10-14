@@ -1,8 +1,8 @@
 export const heroData = {
   name: "Zunair Shahid",
-  title: "FullStack AI Engineer",
+  title: "FullStack Engineer",
   description:
-    "I build intuitive web products and practical AI systems — turning ideas into reliable, user-friendly software.",
+    "Full-Stack Engineer building scalable web applications and practical AI solutions with a focus on clean architecture, secure systems & real-world impact.",
   resumeUrl: "/cv/ZunairShahid_CV (1).pdf",
   portrait: "/Myself/portrait.jpeg",
   location: "Lahore, Pakistan",
@@ -20,11 +20,11 @@ export const contactData = {
 };
 
 export const aboutData = {
-  paragraphs: [
-    "I am a full-stack developer who builds end-to-end web applications with MongoDB, Express.js, React, and Node.js. My work focuses on scalable architecture, clean APIs, and interfaces that stay fast and easy to use.",
-    "On the frontend I design responsive React experiences. On the backend I build secure REST APIs, model data in MongoDB, and ship features that hold up in production.",
-    "I also work with RAG, LangChain, LangGraph, and related AI tooling to add grounded search, automation, and intelligent workflows into real products.",
-  ],
+ paragraphs: [
+"I build end-to-end web applications using MongoDB, Express.js, React, and Node.js, with an emphasis on scalable architecture, maintainable code, and seamless user experiences.",
+"I develop responsive frontend interfaces and secure backend services, designing RESTful APIs, structured data models, and reliable features built for real-world use.",
+"I also build AI-powered solutions using RAG, LangChain, and LangGraph, integrating contextual retrieval, intelligent automation, and multi-agent workflows into practical applications.",
+],
   location: "Lahore, Pakistan",
 };
 
@@ -150,6 +150,74 @@ export const skillsRow4 = [
 
 export const experienceData = [
   {
+    role: "Frontend Engineer (Part-Time - Remote)",
+    company: "CalaraVision",
+    period: "Jun 2026 - Present",
+    points: [
+      "Built 5+ responsive modules using React.js, TypeScript, React Hooks, Context API and Redux Toolkit in an Agile team of 4 engineers.",
+      "Integrated RESTful APIs with PostgreSQL-backed services, implementing JWT authentication and Role-Based Access Control (RBAC) to secure user data.",
+      "Built responsive, cross-browser compatible UIs using Tailwind CSS, HTML5 and reusable components for maintainability.",
+      "Maintained code quality through Git/GitHub workflows, peer code reviews, unit testing, debugging and CI/CD pipelines.",
+    ],
+    tags: [
+      "React.js",
+      "TypeScript",
+      "React Hooks",
+      "Context API",
+      "Redux Toolkit",
+      "RESTful APIs",
+      "PostgreSQL",
+      "JWT",
+      "RBAC",
+      "Tailwind CSS",
+      "HTML5",
+      "Git/GitHub",
+      "CI/CD",
+      "Agile",
+    ],
+  },
+  {
+    role: "Freelance Full-Stack Engineer (Freelance - Remote)",
+    company: "Fiverr",
+    period: "Nov 2025 - Dec 2025",
+    points: [
+      "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
+      "Built a real-time reporting tool (Socket.IO) with automated CSV/PDF exports and third-party API integrations.",
+      "Designed KiCad-based design automation software to streamline engineering workflows and automate data export.",
+    ],
+    tags: [
+      "Next.js",
+      "SSR",
+      "Tailwind CSS",
+      "SEO",
+      "Core Web Vitals",
+      "Socket.IO",
+      "Third-Party API Integration",
+      "CSV/PDF Export",
+      "KiCad",
+      "Design Automation",
+    ],
+  },
+  {
+    role: "Research Intern, Blockchain Security",
+    company: "Bahria University",
+    period: "Jan 2026 - Feb 2026",
+    points: [
+      "Researched post-quantum cryptography to strengthen blockchain security against quantum computing threats.",
+      "Evaluated quantum-resilient blockchain architectures and consensus mechanisms for security, scalability and interoperability.",
+    ],
+    tags: [
+      "Blockchain",
+      "Post-Quantum Cryptography",
+      "Quantum Computing",
+      "Consensus Mechanisms",
+      "Security",
+      "Scalability",
+      "Interoperability",
+      "Research",
+    ],
+  },
+  {
     role: "Full-Stack Engineer (MERN Stack)",
     company: "Self-Directed",
     period: "Jan 2025 - Present",
@@ -174,45 +242,4 @@ export const experienceData = [
       "Agile",
     ],
   },
-  {
-    role: "Research Intern, Blockchain & Quantum Computing",
-    company: "Bahria University",
-    period: "Jan 2026 - Feb 2026",
-    points: [
-      "Researched post-quantum cryptographic techniques and algorithms to strengthen blockchain security against emerging quantum computing threats.",
-      "Evaluated quantum-resilient blockchain architectures and consensus mechanisms to improve security, scalability and interoperability.",
-    ],
-    tags: [
-      "Blockchain",
-      "Quantum Computing",
-      "Post-Quantum Cryptography",
-      "Consensus Mechanisms",
-      "Security",
-      "Scalability",
-      "Interoperability",
-      "Research",
-    ],
-
-  },
-  {
-    role: "Full-Stack Engineering (Freelance)",
-    company: "Fiverr, Remote",
-    period: "Nov 2025 - Dec 2025",
-    points: [
-      "Built a responsive, SEO-optimized Next.js landing page with SSR and Tailwind CSS, reducing load time to under 2 seconds and improving Core Web Vitals and client conversions.",
-      "Developed a real-time client reporting tool with automated CSV and PDF exports and third-party API integrations, eliminating manual reporting processes.",
-      "Designed custom KiCad-based design automation software to streamline engineering workflows and automate engineering data export.",
-    ],
-    tags: [
-      "Next.js",
-      "SSR",
-      "Tailwind CSS",
-      "SEO",
-      "Core Web Vitals",
-      "REST APIs",
-      "Third-Party API Integration",
-      "CSV/PDF Export",
-      "KiCad",
-      "Design Automation",
-    ],  },
 ];

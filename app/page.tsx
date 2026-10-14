@@ -21,10 +21,10 @@ export default function Home() {
       <main className="relative z-10 w-full overflow-x-hidden">
         <Navbar />
         <Hero />
-        <TechMarquee />
         <About />
         <Experience />
         <Skills />
+        {/* <TechMarquee /> */}
         <Projects />
         <Footer />
       </main>

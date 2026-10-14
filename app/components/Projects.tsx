@@ -147,7 +147,7 @@ function ProjectCard({ project }: { project: Project }) {
                 src={cover}
                 alt={`${project.title} preview`}
                 loading="lazy"
-                className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                className="h-full w-full object-fill"
               />
             ) : (
               <div className="flex h-full items-center justify-center text-sm text-neutral-500">
