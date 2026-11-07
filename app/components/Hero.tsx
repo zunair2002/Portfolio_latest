@@ -251,25 +251,27 @@ export default function Hero() {
               aria-hidden="true"
               className="absolute -bottom-3 -right-3 h-full w-full overflow-hidden rounded-[26px] bg-[#101051]"
             >
-              <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-[#32de84]/40 blur-2xl" />
+              <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-[#32de84]/20 blur-[100px]" />
             </div>
 
             {/* Photo: fixed 4:5 */}
-            <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[26px] border-[5px] border-white bg-white shadow-[0_30px_60px_-24px_rgba(16,16,81,0.5)]">
-              <Image
-                src={heroData.portrait}
-                alt={`Portrait of ${heroData.name}`}
-                fill
-                priority
-                sizes="(min-width: 1024px) 390px, 300px"
-                className="object-cover object-[50%_18%] grayscale transition duration-700 group-hover:scale-[1.04] group-hover:grayscale-0"
-              />
+            
+<div className="group relative aspect-[4/5] w-full overflow-hidden rounded-[26px] border-[5px] border-white bg-white">
+  <Image
+    src={heroData.portrait}
+    alt={`Portrait of ${heroData.name}`}
+    fill
+    priority
+    sizes="(min-width: 1024px) 390px, 300px"
+    className="object-cover object-[50%_18%] transition-transform duration-700 group-hover:scale-[1.04]"
+  />
 
-              <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[12px] font-semibold text-[#101051] backdrop-blur">
-                <MapPin size={13} />
-                {heroData.location}
-              </div>
-            </div>
+  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-[12px] font-semibold text-[#101051] backdrop-blur">
+    <MapPin size={13} />
+    {heroData.location}
+  </div>
+</div>
+
 
           </motion.div>
         </div>

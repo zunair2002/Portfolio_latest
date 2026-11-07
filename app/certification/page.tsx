@@ -15,13 +15,6 @@ const certificates = [
     link: "/CertificationPics/AI certificate.png",
   },
   {
-    title: "Full-Stack Development",
-    issuer: "Simplilearn",
-    description:
-      "End-to-end web development covering React, Node.js, APIs, and scalable frontend architecture.",
-    link: "/CertificationPics/MERN.png",
-  },
-  {
     title: "Data Transformation",
     issuer: "MongoDB",
     description:
@@ -29,11 +22,25 @@ const certificates = [
     link: "/CertificationPics/MongoDB.png",
   },
   {
+  title: "Linux Fundamentals (LFS101)",
+  issuer: "The Linux Foundation",
+  description:
+    "Linux fundamentals, file systems, essential commands, permissions, and basic networking for system administration and DevOps.",
+  link: "/CertificationPics/Linux Foundation Certificate for Zunair Shahid (1).png",
+},
+  {
     title: "Prompt Engineering",
     issuer: "Amazon Web Services",
     description:
       "Practical prompting, context management, and structured LLM usage for reliable AI-powered applications.",
     link: "/CertificationPics/prompt.png",
+  },
+  {
+    title: "Full-Stack Development",
+    issuer: "Simplilearn",
+    description:
+      "End-to-end web development covering React, Node.js, APIs, and scalable frontend architecture.",
+    link: "/CertificationPics/MERN.png",
   },
   {
     title: "Machine Learning",

@@ -247,14 +247,14 @@ export default function Projects() {
             </p>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             role="group"
             aria-label="Filter projects"
-            className="-mx-1 flex w-fit max-w-full flex-wrap gap-1 rounded-full border border-[#101051]/10 bg-white/70 p-1 backdrop-blur"
+            className="-mx-1 flex w-fit max-w-full flex-nowrap gap-1 overflow-x-auto overscroll-x-contain rounded-full border border-[#101051]/10 bg-white/70 p-1 backdrop-blur"
           >
             {filters.map((f) => {
               const isActive = filter === f;
@@ -265,7 +265,7 @@ export default function Projects() {
                   type="button"
                   aria-pressed={isActive}
                   onClick={() => setFilter(f)}
-                  className={`relative isolate inline-flex items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors sm:px-4 ${
+                  className={`relative isolate inline-flex shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold transition-colors sm:px-4 ${
                     isActive ? "text-white" : "text-[#101051]/65 hover:text-[#101051]"
                   }`}
                 >
@@ -283,7 +283,7 @@ export default function Projects() {
                 </button>
               );
             })}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
