@@ -3,8 +3,8 @@ export const heroData = {
   title: "FullStack Engineer",
   description:
     "Full-Stack Engineer building scalable web applications and practical AI solutions with a focus on clean architecture, secure systems & real-world impact.",
-  resumeUrl: "/cv/ZunairShahid_CV (1).pdf",
-  portrait: "/Myself/portrait.jpeg",
+  resumeUrl: "/cv/Zunair_CV.pdf",
+  portrait: "/Myself/WhatsApp Image 2026-11-07 at 4.49.35 PM.jpeg",
   location: "Lahore, Pakistan",
   stats: [
     { value: "9+", label: "Projects shipped" },
@@ -16,7 +16,7 @@ export const heroData = {
 export const contactData = {
   email: "zunairshahid02@gmail.com",
   github: "https://github.com/zunair2002",
-  linkedin: "https://www.linkedin.com/in/zunair-shahid-1ab94327a/",
+  linkedin: "https://www.linkedin.com/in/zunairshaid/",
 };
 
 export const aboutData = {
@@ -152,7 +152,7 @@ export const experienceData = [
   {
     role: "Frontend Engineer (Part-Time - Remote)",
     company: "CalaraVision",
-    period: "Jun 2026 - Present",
+    period: "Jun 2026 - Oct 2026",
     points: [
       "Built 5+ responsive modules using React.js, TypeScript, React Hooks, Context API and Redux Toolkit in an Agile team of 4 engineers.",
       "Integrated RESTful APIs with PostgreSQL-backed services, implementing JWT authentication and Role-Based Access Control (RBAC) to secure user data.",

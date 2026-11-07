@@ -77,24 +77,30 @@ export default function Navbar() {
             }`}
             aria-label="Main navigation"
           >
-            <a href="#top" className="group flex items-center gap-3 no-underline">
-              <span className="relative">
-                <Image
-                  src="/Myself/portrait.jpeg"
-                  alt="Zunair Shahid"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 rounded-full object-cover object-[50%_18%] ring-2 ring-[#32de84] ring-offset-2 ring-offset-white transition-transform duration-300 group-hover:scale-105"
-                />
-                <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#32de84]" />
-              </span>
-              <span className="hidden flex-col leading-tight sm:flex">
-                <span className="text-sm font-semibold tracking-tight text-[#101051]">Zunair Shahid</span>
-                <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#16884e]">
-                Engineer
-                </span>
-              </span>
-            </a>
+            
+<a href="#top" className="group flex items-center gap-3 no-underline">
+  <span className="relative">
+    <Image
+      src="/Myself/WhatsApp Image 2026-11-07 at 4.49.35 PM.jpeg"
+      alt="Zunair Shahid"
+      width={40}
+      height={40}
+      className="h-10 w-10 rounded-full object-cover object-[50%_18%] ring-2 ring-[#32de84] ring-offset-2 ring-offset-white shadow-[0_12px_30px_-20px_rgba(16,16,81,0.10)] transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_5px_16px_rgba(16,16,81,0.22)]"
+    />
+
+    <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-[#32de84] shadow-[0_2px_5px_rgba(50,222,132,0.25)]" />
+  </span>
+
+  <span className="hidden flex-col leading-tight sm:flex">
+    <span className="text-sm font-semibold tracking-tight text-[#101051]">
+      Zunair Shahid
+    </span>
+    <span className="font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#16884e]">
+      Full-Stack Engineer
+    </span>
+  </span>
+</a>
+
 
             <div className="hidden items-center gap-0.5 md:flex">
               {links.map((link) => {
